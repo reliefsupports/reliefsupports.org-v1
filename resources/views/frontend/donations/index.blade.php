@@ -45,7 +45,9 @@
 
         <div class="row">
             <div class="col-md-12" style="text-align: center">
+                @if($donations && $donations->links())
                 {{ $donations->links() }}
+                @endif
             </div>
         </div>
 

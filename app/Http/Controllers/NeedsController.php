@@ -28,7 +28,7 @@ class NeedsController extends Controller
     public function index()
     {
         $needs = $this->need->getNeeds();
-        return view('/frontend/needs/index')->with(['needs' => $needs]);
+        return view('/frontend/needs/index')->with(['needs' => ($needs) ? $needs : array()]);
     }
 
     /**

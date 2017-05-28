@@ -28,7 +28,10 @@ class DonationController extends Controller
     public function index()
     {
         $donations = $this->donation->getDonations();
-        return view('/frontend/donations/index')->with(['donations' => $donations]);
+
+        return view('/frontend/donations/index')->with(
+            ['donations' => ($donations) ? $donations : array()]
+        );
     }
 
     /**
