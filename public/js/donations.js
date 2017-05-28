@@ -57,3 +57,16 @@ $('.read-needs').on('click', function () {
 $('form').submit(function(e) {
     $('form').find('button[type=submit]').attr("disabled", true);
 });
+new Clipboard('.btn');
+
+$('#share').tooltip({
+  trigger: 'click',
+  placement: 'bottom',
+  title: 'URL copied'
+});
+
+$("#share").click(function(){
+    setTimeout(function() {
+    $('#share').tooltip('hide');
+  }, 1000);
+});
