@@ -24,3 +24,4 @@ Route::post('/needs/add', 'NeedsController@save');
 Route::get('/needs/show/{id}', 'NeedsController@show');
 
 Route::get('/emergency-contacts', 'HomeController@emergency');
+Route::get('/twitter-feed', 'FeedsController@index');
