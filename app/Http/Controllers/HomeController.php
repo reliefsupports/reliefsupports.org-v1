@@ -33,8 +33,8 @@ class HomeController extends Controller
 
         return view('frontend/home')
             ->with([
-                'donations' => $donations,
-                'needs' => $needs
+                'donations' => ($donations) ? $donations : array(),
+                'needs' => ($needs) ? $needs : array()
             ]);
     }
 
