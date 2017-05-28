@@ -89,7 +89,7 @@
 </footer>
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-<script src="/js/vendor/jquery.min.js"></script>
+<script src="/public/js/vendor/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/public/js/vendor/video.js"></script>
