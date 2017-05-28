@@ -21,7 +21,7 @@ git clone git@github.com:reliefsupports/web-app.git reliefsupports
 
 #### Docker
 
-* Install Docker on your computer
+* Install [Docker](https://www.docker.com/) on your computer
 * Run following commands accordingly
 
 ```
