@@ -71,11 +71,11 @@ class DonationController extends Controller
             if ($response) {
                 return redirect('/donations')
                     ->with('isSuccess', true)
-                    ->with('message', 'Donation added.');
+                    ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
             } else {
                 return redirect('/donations/add')
                     ->with('isSuccess', false)
-                    ->with('errors', ['Donation adding failed. Please try again.'])
+                    ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])
                     ->withInput();
             }
         }

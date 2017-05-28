@@ -67,11 +67,11 @@ class NeedsController extends Controller
             if ($response) {
                 return redirect('/needs')
                     ->with('isSuccess', true)
-                    ->with('message', 'Needs added.');
+                    ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
             } else {
                 return redirect('/needs/add')
                     ->with('isSuccess', false)
-                    ->with('errors', ['Needs adding failed. Please try again.'])
+                    ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])
                     ->withInput();
             }
         }
