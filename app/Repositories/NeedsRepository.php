@@ -30,6 +30,18 @@ class NeedsRepository implements NeedsInterface
         }
     }
 
+    public function updateNeed($id, array $input)
+    {
+        $need = $this->findNeed($id);
+        
+        if ($need) {
+            $need->fill($input);
+            return $need->save();
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Get all donations
      *
