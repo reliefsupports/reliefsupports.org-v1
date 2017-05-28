@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="/css/flat-ui.min.css" rel="stylesheet">
+    <link href="/public/css/flat-ui.min.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -92,9 +92,9 @@
 <script src="/js/vendor/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/vendor/video.js"></script>
-<script src="/js/flat-ui.min.js"></script>
-<script src="/js/donations.js"></script>
+<script src="/public/js/vendor/video.js"></script>
+<script src="/public/js/flat-ui.min.js"></script>
+<script src="/public/js/donations.js"></script>
 
 </body>
 </html>
