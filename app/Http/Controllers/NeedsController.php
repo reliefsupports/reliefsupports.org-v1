@@ -54,8 +54,7 @@ class NeedsController extends Controller
             'telephone' => 'required|max:100',
             'address' => 'required|max:100',
             'city' => 'required|max:50',
-            'needs' => 'required',
-            'heads' => 'required|integer',
+            'needs' => 'required'
         ]);
 
         if ($validator->fails()) {

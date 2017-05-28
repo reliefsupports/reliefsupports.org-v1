@@ -41,7 +41,11 @@
                                 <td>{{ str_limit($need->address, 200) }}</td>
                                 <td>{{ $need->city }}</td>
                                 <td>{{ $need->telephone }}</td>
+                                @if($need->heads && $need->heads > 0)
                                 <td>{{ $need->heads }}</td>
+                                @else
+                                <td>N/A</td>
+                                @endif
                                 <td>{{ $need->created_at }}</td>
                                 <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
                             </tr>
