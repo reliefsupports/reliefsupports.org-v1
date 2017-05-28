@@ -7,3 +7,22 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+//custom
+.hero {
+	h3 {
+		margin-top: 0;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	@media (max-width: 480px) {
+		.btn {
+			+.btn {
+				margin-top: 10px;
+			}
+		}
+	}
+}
