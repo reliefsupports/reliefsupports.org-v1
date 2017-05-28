@@ -115,7 +115,7 @@ class DonationController extends Controller
         $response['data'] = $donations;
         $response['error'] = false;
 
-        return json_encode($response);
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
     public function post(Request $request) {
@@ -126,6 +126,7 @@ class DonationController extends Controller
         if ( $this->donation->addDonation($request->all()) ) {
             $response['error'] = false;
         }
-        return json_encode($response);
+        
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 }

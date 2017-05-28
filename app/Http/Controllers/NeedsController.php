@@ -111,7 +111,7 @@ class NeedsController extends Controller
         $response['data'] = $needs;
         $response['error'] = false;
 
-        return json_encode($response);
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
     public function post(Request $request) {
@@ -122,6 +122,8 @@ class NeedsController extends Controller
         if ( $this->need->addNeed($request->all()) ) {
             $response['error'] = false;
         }
-        return json_encode($response);
+
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 }
+
