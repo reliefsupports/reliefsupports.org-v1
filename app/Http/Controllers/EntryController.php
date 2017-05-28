@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class EntryController extends Controller
 {
+    // private $need;
+
     /*
      * EntryController constructor.
      */
