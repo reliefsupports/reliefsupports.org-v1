@@ -3,16 +3,7 @@
 ## How to setup locally.
 
 * Clone the repo.
-* Create and update `.env` file
-
-```
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE=flood
-DB_USERNAME=root
-DB_PASSWORD=root
-```
+* Rename `.env.example` file as `.env`
 
 ### Docker
 
