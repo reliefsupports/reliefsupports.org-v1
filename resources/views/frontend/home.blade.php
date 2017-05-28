@@ -32,19 +32,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($needs as $need)
-                        <tr>
-                            <th scope="row">{{ $need->id }}</th>
-                            <td>{{ $need->name }}</td>
-                            <td>{{ str_limit($need->needs, 150) }}</td>
-                            <td>{{ str_limit($need->address, 200) }}</td>
-                            <td>{{ $need->city }}</td>
-                            <td>{{ $need->telephone }}</td>
-                            <td>{{ $need->heads }}</td>
-                            <td>{{ $need->created_at }}</td>
-                            <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
-                        </tr>
-                    @endforeach
+                    @if(count($needs) > 0)
+                        @foreach($needs as $need)
+                            <tr>
+                                <th scope="row">{{ $need->id }}</th>
+                                <td>{{ $need->name }}</td>
+                                <td>{{ str_limit($need->needs, 150) }}</td>
+                                <td>{{ str_limit($need->address, 200) }}</td>
+                                <td>{{ $need->city }}</td>
+                                <td>{{ $need->telephone }}</td>
+                                <td>{{ $need->heads }}</td>
+                                <td>{{ $need->created_at }}</td>
+                                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
 

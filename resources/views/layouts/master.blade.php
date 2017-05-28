@@ -8,6 +8,8 @@
     <!-- Loading Bootstrap -->
     <link href="/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
+
     <!-- Loading Flat UI -->
     <link href="/css/flat-ui.min.css" rel="stylesheet">
 
@@ -20,6 +22,10 @@
 <body>
 
 <style>
+    * {
+        font-family: 'Abhaya Libre', serif;
+    }
+    
     body {
         padding-top: 120px;
     }
