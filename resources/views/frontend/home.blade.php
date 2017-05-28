@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>නවතම අවශ්‍යතා </h4>
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>නවතම ආධාර </h4>
-                <table class="table">
+                <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
