@@ -98,4 +98,30 @@ class NeedsController extends Controller
             ]);
         }
     }
+
+    public function get($id = null) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        $needs = $this->need->getNeeds();
+        if (!$needs) {
+            $needs = [];
+        }
+        $response['data'] = $needs;
+        $response['error'] = false;
+
+        return json_encode($response);
+    }
+
+    public function post(Request $request) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        if ( $this->need->addNeed($request->all()) ) {
+            $response['error'] = false;
+        }
+        return json_encode($response);
+    }
 }

@@ -25,3 +25,5 @@ Route::get('/needs/show/{id}', 'NeedsController@show');
 
 Route::get('/emergency-contacts', 'HomeController@emergency');
 Route::get('/twitter-feed', 'FeedsController@index');
+
+Route::get('/entry/{type}/{id}', 'EntryController@view');
