@@ -67,6 +67,7 @@ class DonationController extends Controller
                 ->withInput();
         } else {
             $response = $this->donation->addDonation($request->all());
+            
             if ($response) {
                 return redirect('/donations')
                     ->with('isSuccess', true)
