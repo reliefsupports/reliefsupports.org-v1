@@ -1,9 +1,15 @@
 @extends('layouts.master')
 @section('content')
-    <div class="modal-body">
+    <div class="container">
+        <div class="panel panel-default">
+            @foreach($entry as $e)
+                <div class="panel-heading">
+                    <h3 class="panel-title">Donation #{{$e->id}}</h3>
+                    <button class="btn btn-default pull-right" id="share" data-clipboard-text="http://reliefsupports.org/entry/donation/{{ $e->id }}">Share</button>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
                     <dl class="dl-horizontal">
-                     @foreach($entry as $e)
-                        <h1>Doanation #{{$e->id}}</h1>
                         <dt>නම</dt>
                         <dd id="name">{{$e->name}}</dd>
                         <dt>ආධාරය</dt>
@@ -18,7 +24,8 @@
                         <dd id="information">{{$e->information}}</dd>
                         <dt>ඇතුල්කලේ</dt>
                         <dd id="added">{{$e->created_at}}</dd>
-                     @endforeach
                     </dl>
                 </div>
-                </div>
+            @endforeach
+        </div>
+    </div>
