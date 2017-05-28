@@ -35,7 +35,11 @@ class FacebookNotification
         $content[] = $need->name.' - '.$need->telephone;
 
         try {
+          
           $response = $this->fb->post('/me/feed', ['message' => implode($content, "\n")]);
+          $response->decodeBody();
+          return array_get($response->getDecodedBody(), 'id');
+
         } catch(FacebookResponseException $e) {
             Log::error($e);
             return false;
