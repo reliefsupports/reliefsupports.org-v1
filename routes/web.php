@@ -29,3 +29,10 @@ Route::get('/twitter-feed', 'FeedsController@index');
 
 Route::get('/entry/{type}/{id}', 'EntryController@view');
 Route::post('/search-donations-needs', 'HomeController@searchDonationsOrNeeds');
+
+Route::get('/suppliers', 'SupplierController@index')
+    ->name('suppliers');
+Route::get('/suppliers/add', 'SupplierController@show')
+    ->name('suppliers.add');
+Route::post('/suppliers/add', 'SupplierController@save')
+    ->name('suppliers.save');
