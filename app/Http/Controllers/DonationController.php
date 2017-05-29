@@ -113,6 +113,17 @@ class DonationController extends Controller
         }
     }
 
+    /**
+     * Show online donations
+     *
+     * @return page
+     */
+    public function showOnlineDonations()
+    {
+        return view('/frontend/donations/onlineDonation');
+    }
+  
+  
     public function get($id = null) {
         $response = array(
             'error' => true,
