@@ -5,6 +5,12 @@
     <title>Relief Supports Sri Lanka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Relief Supports Sri Lanka"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
+    <meta property="og:description" content="This is a community driven Open Source project to support relief support activities conduct by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
+    
     <!-- Loading Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,7 +33,7 @@
     }
     
     body {
-        padding-top: 120px;
+        padding-top: 95px;
     }
 
     .main-container {
@@ -54,7 +60,7 @@
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL</a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
