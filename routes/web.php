@@ -26,3 +26,5 @@ Route::get('/needs/show/{id}', 'NeedsController@show');
 Route::get('/emergency-contacts', 'HomeController@emergency');
 Route::get('/twitter-feed', 'FeedsController@index');
 
+Route::get('/suppliers', 'SupplierController@index')
+    ->name('suppliers');
