@@ -58,9 +58,22 @@ class  DonationController extends ApiController {
 
     /**
      * @param Request $request
+     * @return mixed
      */
     public function store(Request $request)
     {
 
+        $this->validate($request, [
+            'name' => 'required',
+            'telephone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'donation' => 'required',
+            'information' => 'required',
+        ]);
+
+        $data = $this->donation->addDonation($request->all());
+
+        return $this->respondCreated($data);
     }
 }
