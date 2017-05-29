@@ -7,14 +7,16 @@ We welcome your inovative ideas and suggestions to make a better solution for th
 
 http://reliefsupports.org
 
-## Contribution Guide
+## How to Contribute
 
-### Setup the development environment
+Developers can now initiate discussions through [Gitter](https://gitter.im/relief-supports/Lobby). Before starting to work on an issue, please go through the [Waffle](https://waffle.io/reliefsupports/reliefsupports.org) board to make sure that the item is not already in progress. Once you select a task to work on, please drag it to `In Progress`.
+
+### Setting up the development environment
 
 Clone the prject repository as belows;
 
 ```
-git clone git@github.com:reliefsupports/web-app.git reliefsupports`
+git clone git@github.com:reliefsupports/reliefsupports.org.git reliefsupports`
 ```
 
 then, rename `.env.example` file as `.env`
@@ -31,7 +33,7 @@ docker exec -it reliefsupports_php_1 bash
 composer update
 
 chmod 777 -R storage/
-chmod 777 bootstrap/cache 
+chmod 777 bootstrap/cache
 ```
 
 #### On WAMP / XAMPP or other server
