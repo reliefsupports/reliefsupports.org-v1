@@ -60,6 +60,26 @@ CREATE TABLE `needs` (
 
 
 
+# Dump of table transports
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `transports`;
+
+CREATE TABLE `transports` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',,
+  `telephone` varchar(255) NOT NULL DEFAULT '',,
+  `address` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `availability` text NOT NULL,
+  `time_possibility` text NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `is_fuel` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
