@@ -12,6 +12,6 @@ class Need extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'telephone', 'address', 'city', 'needs', 'heads'
+        'name', 'telephone', 'address', 'city', 'needs', 'heads', 'source'
     ];
 }

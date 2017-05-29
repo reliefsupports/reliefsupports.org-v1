@@ -129,9 +129,17 @@ class NeedsController extends Controller
             'error' => true,
             'data' => null
         );
-        if ( $this->need->addNeed($request->all()) ) {
-            $response['error'] = false;
+        // [TODO]
+        // Add proper auth.
+        $src = $request->input('source');
+        if ($src === 'fbbot') {
+            if ( $this->need->addNeed($request->all()) ) {
+                $response['error'] = false;
+            }
+        } else {
+            $response['error'] = true;
         }
+        // $request->request->add(['source' => 'api']);
 
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
