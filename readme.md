@@ -9,6 +9,8 @@ http://reliefsupports.org
 
 ## Contribution Guide
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/relief-supports/Lobby)
+
 ### Setup the development environment
 
 Clone the prject repository as belows;
@@ -31,7 +33,7 @@ docker exec -it reliefsupports_php_1 bash
 composer update
 
 chmod 777 -R storage/
-chmod 777 bootstrap/cache 
+chmod 777 bootstrap/cache
 ```
 
 #### On WAMP / XAMPP or other server
