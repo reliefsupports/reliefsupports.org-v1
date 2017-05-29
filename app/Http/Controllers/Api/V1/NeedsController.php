@@ -56,11 +56,23 @@ class  NeedsController extends ApiController {
      * Create via Needs via API
      *
      * @param Request $request
+     * @return mixed
      */
     public function store(Request $request)
     {
 
-        
+        $this->validate($request, [
+            'name' => 'required',
+            'telephone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'needs' => 'required',
+            'heads' => 'required',
+        ]);
+
+        $data = $this->needs->addNeed($request->all());
+
+        return $this->respondCreated($data);
 
     }
 
