@@ -56,6 +56,17 @@
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('interface.main_menu.ess_phone_nos') }}</a></li>
                 <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">{{ __('interface.main_menu.twitter_feed') }}</a></li>
             </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Switch Language <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/lang/si">සිංහල</a></li>
+                        <li><a href="/lang/ta">தமிழ்</a></li>
+                        <li><a href="/lang/en">English</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
