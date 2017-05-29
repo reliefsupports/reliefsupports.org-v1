@@ -52,13 +52,23 @@ class DonationController extends Controller
      */
     public function save(Request $request)
     {
+        $messages = [
+            'name.required' => 'නම ඇතුලත් කිරීම අනිවාර්යයි',
+            'telephone.required' => 'දුරකථන අංක ඇතුලත් කිරීම අනිවාර්යයි',
+            'address.required' => 'ලිපිනය ඇතුලත් කිරීම අනිවාර්යයි',
+            'city.required' => 'නගරය/ප්‍රා.ලේ කොට්ටාසය ඇතුලත් කිරීම අනිවාර්යයි',
+            'needs.required' => 'අවශ්‍යතා ඇතුලත් කිරීම අනිවාර්යයි',
+            'g-recaptcha-response.required' => 'ඔබව තහවුරු කිරීම අනිවාර්යයි'
+        ];
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:100',
             'telephone' => 'required|max:100',
             'address' => 'required|max:100',
             'city' => 'required|max:50',
             'donation' => 'required',
-        ]);
+            'g-recaptcha-response' => 'required|captcha'
+        ], $messages);
         
         if ($validator->fails()) {
             return redirect('/donations/add')
