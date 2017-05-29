@@ -77,11 +77,11 @@ class NeedsController extends Controller
             if ($response) {
                 return redirect('/needs')
                     ->with('isSuccess', true)
-                    ->with('message', 'Needs added.');
+                    ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
             } else {
                 return redirect('/needs/add')
                     ->with('isSuccess', false)
-                    ->with('errors', ['Needs adding failed. Please try again.'])
+                    ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])
                     ->withInput();
             }
         }
@@ -108,4 +108,32 @@ class NeedsController extends Controller
             ]);
         }
     }
+
+    public function get($id = null) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        $needs = $this->need->getNeeds();
+        if (!$needs) {
+            $needs = [];
+        }
+        $response['data'] = $needs;
+        $response['error'] = false;
+
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function post(Request $request) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        if ( $this->need->addNeed($request->all()) ) {
+            $response['error'] = false;
+        }
+
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
+    }
 }
+

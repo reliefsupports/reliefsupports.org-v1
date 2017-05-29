@@ -5,19 +5,39 @@
     <title>Relief Supports Sri Lanka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Relief Supports Sri Lanka"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
+    <meta property="og:description" content="This is a community driven Open Source project to support relief support activities conduct by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
+    
     <!-- Loading Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="/public/css/flat-ui.min.css" rel="stylesheet">
+    <link href="{{ asset("css/flat-ui.min.css") }}" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
     <script src="/public/js/vendor/html5shiv.js"></script>
     <script src="/public/js/vendor/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="{{ asset("js/vendor/jquery.min.js") }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ asset("js/vendor/video.js") }}"></script>
+    <script src="{{ asset("js/flat-ui.min.js") }}"></script>
+    <script src="{{ asset("js/donations.js") }}"></script>
+
+    <!-- DataTables -->
+    <link href="{{ asset("datatable/dataTables.bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
+    <!-- DataTables -->
+    <script src="{{ asset ("datatable/jquery.dataTables.min.js") }}" type="text/javascript"></script>
+    <script src="{{ asset ("datatable/dataTables.bootstrap.min.js") }}" type="text/javascript"></script>
+
 </head>
 <body>
 
@@ -27,7 +47,7 @@
     }
     
     body {
-        padding-top: 120px;
+        padding-top: 95px;
     }
 
     .main-container {
@@ -50,11 +70,22 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">මුල් පිටුව </a></li>
-                <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
-                <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
-                <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL</a></li>
+                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">{{ __('interface.main_menu.front') }}</a></li>
+                <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">{{ __('interface.main_menu.aid') }}</a></li>
+                <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">{{ __('interface.main_menu.needs') }}</a></li>
+                <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('interface.main_menu.ess_phone_nos') }}</a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">{{ __('interface.main_menu.twitter_feed') }}</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Switch Language <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/lang/si">සිංහල</a></li>
+                        <li><a href="/lang/ta">தமிழ்</a></li>
+                        <li><a href="/lang/en">English</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -68,26 +99,19 @@
         <div class="row">
             <div class="col-md-7 col-xs-12">
                 <h3 class="footer-title">© Relief Supports {{ date('Y') }}</h3>
-                <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.</p>
-                <p>මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+                <p>{{ __('information.frontpage.aim') }}</p>
             </div> <!-- /col-xs-7 -->
 
             <div class="col-md-5 col-xs-12">
                 <div class="footer-banner">
                     <h3 class="footer-title">Disclamier</h3>
-                    <p>මෙහි ඇති එක් එක් තොරතුරු ඒ ඒ පුද්ගලයන් විසින් වෙබ් අඩවියට ඇතුලත් කර ඇති අතර ඒවයේ නිරවද්‍යතාවය සම්බණ්දයෙන්  සොයාබලා කටයුතු කරන ලෙස කාරුණිකව ඉල්ලා සිටිමි.</p>
+                    <p>{{ __('information.frontpage.verify_details') }}</p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-<script src="/public/js/vendor/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/public/js/vendor/video.js"></script>
-<script src="/public/js/flat-ui.min.js"></script>
-<script src="/public/js/donations.js"></script>
 
 </body>
 </html>

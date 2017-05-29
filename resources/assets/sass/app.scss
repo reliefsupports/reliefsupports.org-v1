@@ -7,3 +7,63 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+//custom
+.hero {
+	h3 {
+		margin-top: 0;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	@media (max-width: 480px) {
+		.btn {
+			+.btn {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+//responsive tables
+@media (max-width: 480px) {
+	.table-responsive { 
+		thead { display: none; }
+		td { 
+			display: block;
+			&:before {
+			    display: block;
+			    font-size: 80%;
+			    color: #999;
+			} 
+		}
+		&#needs-table {
+			td:nth-of-type(1):before { content: "නම"; }
+			td:nth-of-type(2):before { content: "අවශ්‍යතා"; }
+			td:nth-of-type(3):before { content: "ලිපිනය"; }	
+			td:nth-of-type(4):before { content: "නගරය"; }	
+			td:nth-of-type(5):before { content: "දුරකථන"; }	
+			td:nth-of-type(6):before { content: "පිරිස	"; }
+			td:nth-of-type(7):before { content: "ඇතුල්කලේ"; }
+		}
+		&#donations-table {
+			td:nth-of-type(1):before { content: "නම"; }
+			td:nth-of-type(2):before { content: "ආධාරය"; }
+			td:nth-of-type(3):before { content: "ලිපිනය"; }	
+			td:nth-of-type(4):before { content: "නගරය"; }	
+			td:nth-of-type(5):before { content: "දුරකථන"; }	
+			td:nth-of-type(6):before { content: "ඇතුල්කලේ"; }
+		}
+	}
+}
+
+//footer mobile fix 
+
+@media (max-width: 480px) {
+	.footer-banner {
+		margin-left: 0;
+	}
+}
