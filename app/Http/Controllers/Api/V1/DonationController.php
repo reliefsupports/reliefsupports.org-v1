@@ -55,4 +55,12 @@ class  DonationController extends ApiController {
         return $this->respond($data);
     }
 
+
+    /**
+     * @param Request $request
+     */
+    public function store(Request $request)
+    {
+
+    }
 }
