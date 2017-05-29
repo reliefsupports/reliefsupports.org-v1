@@ -5,12 +5,19 @@
     <title>Relief Supports Sri Lanka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Relief Supports Sri Lanka"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
+    <meta property="og:description" content="This is a community driven Open Source project to support relief support activities conduct by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
+    
     <!-- Loading Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 
     <!-- Loading Flat UI -->
+
     <link href="{{asset('css/flat-ui.min.css')}}" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -18,6 +25,20 @@
     <script src="{{asset('js/vendor/html5shiv.js')}}"></script>
     <script src="{{asset('js/vendor/respond.min.js')}}"></script>
     <![endif]-->
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="{{ asset("js/vendor/jquery.min.js") }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ asset("js/vendor/video.js") }}"></script>
+    <script src="{{ asset("js/flat-ui.min.js") }}"></script>
+    <script src="{{ asset("js/donations.js") }}"></script>
+
+    <!-- DataTables -->
+    <link href="{{ asset("datatable/dataTables.bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
+    <!-- DataTables -->
+    <script src="{{ asset ("datatable/jquery.dataTables.min.js") }}" type="text/javascript"></script>
+    <script src="{{ asset ("datatable/dataTables.bootstrap.min.js") }}" type="text/javascript"></script>
+
 </head>
 <body>
 
@@ -27,7 +48,7 @@
     }
     
     body {
-        padding-top: 120px;
+        padding-top: 95px;
     }
 
     .main-container {
@@ -55,7 +76,7 @@
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
                 <li {{ (Request::is('transports*') ? 'class=active' : '') }}><a href="/transports">ප්‍රවාහන පහසුකම්</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL</a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -89,6 +110,7 @@
 <script src="{{asset('js/vendor/video.js')}}"></script>
 <script src="{{asset('js/flat-ui.min.js')}}"></script>
 <script src="{{asset('js/donations.js')}}"></script>
+
 
 </body>
 </html>
