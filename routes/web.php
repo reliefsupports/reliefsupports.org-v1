@@ -27,3 +27,8 @@ Route::get('/emergency-contacts', 'HomeController@emergency');
 Route::get('/twitter-feed', 'FeedsController@index');
 
 Route::get('/entry/{type}/{id}', 'EntryController@view');
+
+Route::get('lang/{lang}', function ($lang) {
+    Session::put('language', $lang);
+    return back();
+});
