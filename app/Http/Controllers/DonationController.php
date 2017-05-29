@@ -81,11 +81,11 @@ class DonationController extends Controller
             if ($response) {
                 return redirect('/donations')
                     ->with('isSuccess', true)
-                    ->with('message', 'Donation added.');
+                    ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
             } else {
                 return redirect('/donations/add')
                     ->with('isSuccess', false)
-                    ->with('errors', ['Donation adding failed. Please try again.'])
+                    ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])
                     ->withInput();
             }
         }
@@ -111,5 +111,40 @@ class DonationController extends Controller
                 'isSuccess' => false
             ]);
         }
+    }
+
+    public function get($id = null) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        $donations = $this->donation->getDonations();
+        if (!$donations) {
+            $donations = [];
+        }
+        $response['data'] = $donations;
+        $response['error'] = false;
+
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function post(Request $request) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        // [TODO]
+        // Add proper auth.
+        $src = $request->input('source');
+        if ($src === 'fbbot') {
+            if ( $this->need->addNeed($request->all()) ) {
+                $response['error'] = false;
+            }            
+        } else {
+            $response['error'] = true;
+        }
+        // $request->request->add(['source' => 'api']);
+        
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 }

@@ -4,7 +4,7 @@
     <div class="container">
 
         <!-- Main component for a primary marketing message or call to action -->
-        <div class="well">
+        <div class="well hero">
             <h3>ආයුබෝවන්!!!</h3>
             <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
                 මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>නවතම අවශ්‍යතා </h4>
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>නවතම ආධාර </h4>
-                <table class="table">
+                <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
