@@ -35,7 +35,10 @@
                         <td>{{ $donation->city }}</td>
                         <td>{{ $donation->telephone }}</td>
                         <td>{{ $donation->created_at }}</td>
-                        <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
+                        <td>
+                        <button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button>
+                        <div class="addthis_native_toolbox" addthis:title="ආධාරය" addthis:description="{{ $donation->donation  }} #FloodSL"></div>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
