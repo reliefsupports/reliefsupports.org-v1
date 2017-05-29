@@ -30,7 +30,7 @@ docker-compose up -d
 docker exec -it reliefsupports_php_1 bash
 composer update
 
-chmod 777 -R storage/
+chmod -R 777 storage/
 chmod 777 bootstrap/cache
 ```
 
@@ -38,7 +38,7 @@ chmod 777 bootstrap/cache
 
 ```
 composer update
-chmod 777 -R storage/
+chmod -R 777 storage/
 chmod 777 bootstrap/cache
 ```
 
