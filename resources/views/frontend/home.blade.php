@@ -40,7 +40,7 @@
                                 <td>{{ str_limit($need->needs, 150) }}</td>
                                 <td>{{ str_limit($need->address, 200) }}</td>
                                 <td>{{ $need->city }}</td>
-                                <td>{{ $need->telephone }}</td>
+                                <td><a href="tel:number">{{ $need->telephone }}</a></td>
                                 @if($need->heads && $need->heads > 0)
                                 <td>{{ $need->heads }}</td>
                                 @else
@@ -84,7 +84,7 @@
                             <td>{{ str_limit($donation->donation, 150) }}</td>
                             <td>{{ str_limit($donation->address, 150) }}</td>
                             <td>{{ $donation->city }}</td>
-                            <td>{{ $donation->telephone }}</td>
+                            <td><a href="tel:number">{{ $donation->telephone }}</a></td>
                             <td>{{ $donation->created_at }}</td>
                             <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
                         </tr>

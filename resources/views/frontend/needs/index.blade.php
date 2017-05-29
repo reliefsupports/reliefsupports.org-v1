@@ -34,7 +34,7 @@
                             <td>{{ str_limit($need->needs, 150) }}</td>
                             <td>{{ str_limit($need->address, 200) }}</td>
                             <td>{{ $need->city }}</td>
-                            <td>{{ $need->telephone }}</td>
+                            <td><a href="tel:number">{{ $need->telephone }}</a></td>
                             <td>{{ $need->heads }}</td>
                             <td>{{ $need->created_at }}</td>
                             <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
