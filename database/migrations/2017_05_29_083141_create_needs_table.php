@@ -22,7 +22,7 @@ class CreateNeedsTable extends Migration
             $table->text('needs')->nullable();
             $table->integer('heads')->nullable();
             $table->string('source',11);
-            $table->integer('status')->->default(0);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

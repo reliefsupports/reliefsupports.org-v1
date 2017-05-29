@@ -22,7 +22,7 @@ class CreateDonationsTable extends Migration
             $table->text('donation')->nullable();
             $table->text('information')->nullable();
             $table->string('source',11);
-            $table->integer('status')->->default(0);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
