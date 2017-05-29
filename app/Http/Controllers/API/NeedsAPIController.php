@@ -71,7 +71,55 @@ class NeedsAPIController extends Controller
             }
         }
     }
+    
+    /**
+     * Update donation
+     *
+     * @param Request $request
+     * @return JSON
+     */ 
+    public function update($id, Request $request)
+    {
+        $need = $this->donation->findNeed($id);
+        
+        if( !$need )
+            return response(array(
+                    'error' => true,
+                    'message' => 'Need not found.',
+                    'data' => null
+                ),200); 
+        
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:100',
+            'telephone' => 'required|max:100',
+            'address' => 'required|max:100',
+            'city' => 'required|max:50',
+            'needs' => 'required'
+        ]);
 
+        if ( $validator->fails() ) 
+            return response(array(
+                    'error' => true,
+                    'message' => 'validation error',
+                    'data' => $validator->errors()
+                ),200);
+        
+        $response = $this->need->updateNeed($request->all());
+        if ( $response ) 
+            return Response::json([
+                    'status' => 'success',
+                    'code' => 200,
+                    'message' => 'Need successfully updated',
+                    'data' => $response
+                ], 200);
+
+        return response(array(
+                'error' => true,
+                'message' => 'Need update failed. Please try again.',
+                'data' => null
+            ),200); 
+    }
+    
     /**
      * return a need
      *

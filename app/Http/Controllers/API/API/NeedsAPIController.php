@@ -2,42 +2,42 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Repositories\DonationRepository;
+use App\Repositories\NeedsRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Controller;
 use Validator;
 
-class DonationAPIController extends Controller
+class NeedsAPIController extends Controller
 {
-    private $donation;
+    private $need;
 
     /**
-     * DonationController constructor.
-     * @param DonationRepository $donationRepository
+     * NeedsController constructor.
+     * @param NeedsRepository $needsRepository
      */
-    public function __construct(DonationRepository $donationRepository)
+    public function __construct(NeedsRepository $needsRepository)
     {
-        $this->donation = $donationRepository;
+        $this->need = $needsRepository;
     }
 
     /**
-     * return list of all donatiaons
+     * return list of all needs
      *
-     * @return $this
+     * @return JSON
      */
     public function index(Request $request)
     {
-        $donations = $this->donation->getDonations();
+        $needs = $this->need->getNeeds();
         return response(array(
                 'error' => false,
                 'message' => null,
-                'data' => $donations
-            ),200); 
+                'data' => $needs
+            ),200);     
     }
 
     /**
-     * Save donation
+     * save need
      *
      * @param Request $request
      * @return JSON
@@ -49,30 +49,26 @@ class DonationAPIController extends Controller
             'telephone' => 'required|max:100',
             'address' => 'required|max:100',
             'city' => 'required|max:50',
-            'donation' => 'required',
+            'needs' => 'required'
         ]);
-        
-        if ($validator->fails()) {
-            // 
-            return response(array(
-                    'error' => true,
-                    'message' => 'Validation error.',
-                    'data' => $validator->errors()->all()
-                ),200); 
 
-        } else { 
-            $response = $this->donation->addDonation($request->all());
-            // 
+        if ($validator->fails()) {
+            return redirect('/needs/add')
+                ->with('isSuccess', false)
+                ->with('errors', $validator->errors()->all())
+                ->withInput();
+        } else {
+            $response = $this->need->addNeed($request->all());
             if ($response) {
                 return response(array(
                         'error' => false,
-                        'message' => 'Donation added.',
+                        'message' => 'Needs added.',
                         'data' => null
                     ),200); 
             } else {
                 return response(array(
                         'error' => true,
-                        'message' => 'Donation adding failed. Please try again.',
+                        'message' => 'Needs adding failed. Please try again.',
                         'data' => null
                     ),200); 
             }
@@ -82,26 +78,27 @@ class DonationAPIController extends Controller
     /**
      * Update donation
      *
+     * @param $id
      * @param Request $request
      * @return JSON
      */ 
     public function update($id, Request $request)
     {
-        $donation = $this->donation->findDonation($id);
+        $need = $this->need->findNeed($id);
 
-        if( !$donation )
+        if( !$need )
             return response(array(
                     'error' => true,
-                    'message' => 'Donation not found.',
+                    'message' => 'Need not found.',
                     'data' => null
                 ),200); 
-
+        
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:100',
             'telephone' => 'required|max:100',
             'address' => 'required|max:100',
             'city' => 'required|max:50',
-            'donation' => 'required',
+            'needs' => 'required'
         ]);
 
         if ( $validator->fails() ) 
@@ -111,44 +108,45 @@ class DonationAPIController extends Controller
                     'data' => $validator->errors()
                 ),200);
         
-        $response = $this->donation->updateDonation($request->all());
+        $response = $this->need->updateNeed($id, $request->all());
         if ( $response ) 
             return Response::json([
                     'status' => 'success',
                     'code' => 200,
-                    'message' => 'Donation successfully updated',
+                    'message' => 'Need successfully updated',
                     'data' => $response
                 ], 200);
 
         return response(array(
                 'error' => true,
-                'message' => 'Donation update failed. Please try again.',
+                'message' => 'Need update failed. Please try again.',
                 'data' => null
             ),200); 
     }
-    
+
     /**
-     * return a donation
+     * return a need
      *
      * @param $id
      * @return JSON
-     */    
+     */
     public function show($id)
     {
-        $donation = $this->donation->findDonation($id);
+        $need = $this->need->findNeed($id);
 
-        if ($donation) {
+        if ($need) {
             return response(array(
                 'error' => false,
                 'message' => null,
-                'data' => $donation
+                'data' => $need
             ),200); 
         } else {
             return response(array(
                 'error' => true,
-                'message' => 'Donation not found.',
+                'message' => 'Need not found.',
                 'data' => null
             ),200); 
         }
     }
+
 }

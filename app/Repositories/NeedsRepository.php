@@ -32,7 +32,7 @@ class NeedsRepository implements NeedsInterface
     }
 
     /**
-     * Get all donations
+     * Get all needs
      *
      * @param $limit
      * @return bool
@@ -51,7 +51,7 @@ class NeedsRepository implements NeedsInterface
     }
 
     /**
-     * Find donation
+     * Find needs
      *
      * @param $id
      * @return bool
@@ -60,6 +60,23 @@ class NeedsRepository implements NeedsInterface
     {
         try {
             return Need::find($id);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Update needs
+     *
+     * @param $id
+     * @param $input
+     * @return bool
+     */
+    public function updateNeed($id, $input)
+    {
+        try {
+            return Need::find($id)->update($input);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;

@@ -33,4 +33,12 @@ interface NeedsInterface
      * @return mixed
      */
     public function findNeed($id);
+
+    /**
+     * Update need
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function updateNeed($id, $input);
 }

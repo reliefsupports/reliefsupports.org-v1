@@ -64,4 +64,21 @@ class DonationRepository implements DonationInterface
             return false;
         }
     }
+
+    /**
+     * Update donation
+     *
+     * @param $id
+     * @param $input
+     * @return bool
+     */
+    public function updateDonation($id, $input)
+    {
+        try {
+            return Donation::find($id)->update($input);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
 }

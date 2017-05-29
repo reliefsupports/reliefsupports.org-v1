@@ -82,6 +82,7 @@ class DonationAPIController extends Controller
     /**
      * Update donation
      *
+     * @param $id
      * @param Request $request
      * @return JSON
      */ 
@@ -111,7 +112,7 @@ class DonationAPIController extends Controller
                     'data' => $validator->errors()
                 ),200);
         
-        $response = $this->donation->updateDonation($request->all());
+        $response = $this->donation->updateDonation($id, $request->all());
         if ( $response ) 
             return Response::json([
                     'status' => 'success',
@@ -126,7 +127,7 @@ class DonationAPIController extends Controller
                 'data' => null
             ),200); 
     }
-    
+
     /**
      * return a donation
      *
