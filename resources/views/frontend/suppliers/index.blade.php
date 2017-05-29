@@ -10,7 +10,7 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් සැපයුම්කරුවන් එකතු කරන්න</button></a>
+                    <a href="{{ route('suppliers.add') }}"><button type="button" class="btn btn-primary btn-hg">මෙතනින් සැපයුම්කරුවන් එකතු කරන්න</button></a>
                 </p>
                 <table class="table table-responsive">
                     <thead>
@@ -41,9 +41,9 @@
 
         <div class="row">
             <div class="col-md-12" style="text-align: center">
-              {{--  @if($suppliers && $suppliers->links())
+                @if($suppliers && $suppliers->links())
                 {{ $suppliers->links() }}
-                @endif--}}
+                @endif
             </div>
         </div>
 

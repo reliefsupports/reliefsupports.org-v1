@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Contracts;
 
+use App\ItemType;
 use Illuminate\Pagination\Paginator;
 
 interface SupplierInterface
@@ -10,7 +11,7 @@ interface SupplierInterface
      *  Add a supplier to the system
      *
      */
-    public function add();
+    public function add($attributes);
 
     /**
      * Return paginated list of suppliers
@@ -18,4 +19,11 @@ interface SupplierInterface
      * @return Paginator
      */
     public function lists();
+
+    /**
+     * Return available item types
+     *
+     * @return ItemType[]
+     */
+    public function itemTypes();
 }
