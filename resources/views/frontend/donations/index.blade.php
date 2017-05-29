@@ -35,7 +35,14 @@
                         <td>{{ $donation->city }}</td>
                         <td>{{ $donation->telephone }}</td>
                         <td>{{ $donation->created_at }}</td>
-                        <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
+                        <td>
+                            <button style="float:left"  type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button>
+                            <div style="float:right" class="addthis_toolbox" addthis:title="{{ $donation->donation  }} #FloodSL">
+                                <a class="addthis_button_twitter"></a>
+                                <a class="addthis_button_facebook"></a>
+                                <a class="addthis_button_compact"></a>
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -78,6 +85,7 @@
                         <dd id="added"></dd>
                     </dl>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>

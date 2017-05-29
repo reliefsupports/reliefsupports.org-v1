@@ -47,7 +47,11 @@
                                 <td>N/A</td>
                                 @endif
                                 <td>{{ $need->created_at }}</td>
-                                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                                <td>
+
+                                <div class="addthis_native_toolbox" data-description="{{ $donation->donation  }} #FloodSL"></div>
+                                <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button>
+                                </td>
                             </tr>
                         @endforeach
                     @endif
