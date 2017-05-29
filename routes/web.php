@@ -17,6 +17,7 @@ Route::get('/donations', 'DonationController@index');
 Route::get('/donations/add', 'DonationController@add');
 Route::post('/donations/add', 'DonationController@save');
 Route::get('/donations/show/{id}', 'DonationController@show');
+Route::get('/online-donations', 'DonationController@showOnlineDonations');
 
 Route::get('/needs', 'NeedsController@index');
 Route::get('/needs/add', 'NeedsController@add');

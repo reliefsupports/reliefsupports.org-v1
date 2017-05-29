@@ -102,4 +102,14 @@ class DonationController extends Controller
             ]);
         }
     }
+
+    /**
+     * Show online donations
+     *
+     * @return page
+     */
+    public function showOnlineDonations()
+    {
+        return view('/frontend/donations/onlineDonation');
+    }
 }
