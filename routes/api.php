@@ -14,8 +14,14 @@ use App\Repositories\NeedsRepository;
 |
 */
 
-Route::get('/v1/entry/needs', 'NeedsController@get');
-Route::post('/v1/entry/needs', 'NeedsController@post');
+Route::group(['prefix' => 'v1/entry'], function () {
 
-Route::get('/v1/entry/donations', 'DonationController@get');
-Route::post('/v1/entry/donations', 'DonationController@post');
+	Route::get('needs', 'API\NeedsAPIController@index'); 
+	Route::get('needs/{id}', 'API\NeedsAPIController@show'); 
+	Route::post('needs', 'API\NeedsAPIController@save'); 
+
+	Route::get('donations', 'API\DonationAPIController@index'); 
+	Route::get('donations/{id}', 'API\DonationAPIController@show'); 
+	Route::post('donations', 'API\DonationAPIController@save'); 
+
+});
