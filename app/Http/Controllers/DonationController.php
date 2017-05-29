@@ -112,4 +112,30 @@ class DonationController extends Controller
             ]);
         }
     }
+
+    public function get($id = null) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        $donations = $this->donation->getDonations();
+        if (!$donations) {
+            $donations = [];
+        }
+        $response['data'] = $donations;
+        $response['error'] = false;
+
+        return json_encode($response);
+    }
+
+    public function post(Request $request) {
+        $response = array(
+            'error' => true,
+            'data' => null
+        );
+        if ( $this->donation->addDonation($request->all()) ) {
+            $response['error'] = false;
+        }
+        return json_encode($response);
+    }
 }
