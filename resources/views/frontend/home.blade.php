@@ -4,96 +4,31 @@
     <div class="container">
 
         <!-- Main component for a primary marketing message or call to action -->
-        <div class="well">
-            <h3>ආයුබෝවන්!!!</h3>
-            <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
-                මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+        <div class="well hero">
+            <h3>{{ __('information.frontpage.welcome') }}</h3>
+            <p>{{ __('information.frontpage.aim') }}</p>
             <p>
-                <a class="btn btn-lg btn-primary" href="/donations/add" role="button">ආධාර එකතු කරන්න &raquo;</a>
-                <a class="btn btn-lg btn-primary" href="/needs/add" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="/donations/add" role="button">{{ __('interface.general.add_aid') }} &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="/needs/add" role="button">{{ __('interface.general.add_needs') }} &raquo;</a>
             </p>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <h4>නවතම අවශ්‍යතා </h4>
-                <table class="table table-responsive">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>නම</th>
-                        <th>අවශ්‍යතා</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>පිරිස</th>
-                        <th>ඇතුල්කලේ</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if(count($needs) > 0)
-                        @foreach($needs as $need)
-                            <tr>
-                                <th scope="row">{{ $need->id }}</th>
-                                <td>{{ $need->name }}</td>
-                                <td>{{ str_limit($need->needs, 150) }}</td>
-                                <td>{{ str_limit($need->address, 200) }}</td>
-                                <td>{{ $need->city }}</td>
-                                <td>{{ $need->telephone }}</td>
-                                @if($need->heads && $need->heads > 0)
-                                <td>{{ $need->heads }}</td>
-                                @else
-                                <td>N/A</td>
-                                @endif
-                                <td>{{ $need->created_at }}</td>
-                                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
-                            </tr>
-                        @endforeach
-                    @endif
-                    </tbody>
-                </table>
-
+                <h4>{{ __('interface.general.latest') }} {{ __('interface.main_menu.needs') }}</h4>
+                @include('frontend.needs.table')
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/needs/" role="button">සියලුම  අවශ්‍යතා මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="/needs/" role="button">{{ __('interface.general.see_all_needs') }}  &raquo;</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
 
         <div class="row">
             <div class="col-md-12">
-                <h4>නවතම ආධාර </h4>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>නම</th>
-                        <th>ආධාරය</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>ඇතුල්කලේ</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($donations as $donation)
-                        <tr>
-                            <th scope="row">{{ $donation->id }}</th>
-                            <td>{{ $donation->name }}</td>
-                            <td>{{ str_limit($donation->donation, 150) }}</td>
-                            <td>{{ str_limit($donation->address, 150) }}</td>
-                            <td>{{ $donation->city }}</td>
-                            <td>{{ $donation->telephone }}</td>
-                            <td>{{ $donation->created_at }}</td>
-                            <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-
+                <h4>{{ __('interface.general.latest') }} {{ __('interface.main_menu.aid') }}</h4>
+                @include('frontend.donations.table')
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/donations/" role="button">සියලුම  ආධාර මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="/donations/" role="button">{{ __('interface.general.see_all_aid') }} &raquo;</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->

@@ -10,36 +10,9 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් ආධාර එකතු කරන්න</button></a>
+                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg">{{ __('interface.general.add_aid') }} &raquo;</button></a>
                 </p>
-                <table class="table table-responsive">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>නම</th>
-                        <th>ආධාරය</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>ඇතුල්කලේ</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($donations as $donation)
-                    <tr>
-                        <th scope="row">{{ $donation->id }}</th>
-                        <td>{{ $donation->name }}</td>
-                        <td>{{ str_limit($donation->donation, 150) }}</td>
-                        <td>{{ str_limit($donation->address, 150) }}</td>
-                        <td>{{ $donation->city }}</td>
-                        <td>{{ $donation->telephone }}</td>
-                        <td>{{ $donation->created_at }}</td>
-                        <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
-                    </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                @include('frontend.donations.table')
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
 

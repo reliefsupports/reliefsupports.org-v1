@@ -4,45 +4,45 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3>ආපදා කළමනාකරණ මධ්‍යස්ථානයේ  දුරකථන අoක සහ අදාල ප්‍රදේශ භාර නිළධාරීන්ගේ විස්තර.</h3>
+                <h3>{{ __('information.dmc.official_numbers') }}</h3>
 
                 <div>
-                    <p>කොළඹ   -  නන්දසිරි මහතා</p>
-                    <p>011 2325511<br/>
-                    011 2437242<br/>
-                    077 8819389</p>
+                    <p>{{ __('information.dmc.colombo') }}</p>
+                    <p><a href="tel:number">011 2325511</a><br/>
+                        <a href="tel:number">011 2437242</a><br/>
+                        <a href="tel:number">077 8819389</a></p>
                 </div>
 
                 <div>
-                    <p>ගාල්ල  -  සේදර මහතා</p>
-                    <p>091 22 47175<br/>
-                    077 1761692</p>
+                    <p>{{ __('information.dmc.galle') }}</p>
+                    <p><a href="tel:number">091 22 47175</a><br/>
+                        <a href="tel:number">077 1761692</a></p>
                 </div>
 
                 <div>
-                    <p>ගමපහ  -  කුසුම්සිරි මහතා</p>
-                    <p>033 22 34142<<br/>
-                    033 22 22900<br/>
-                    077 4342786</p>
+                    <p>{{ __('information.dmc.gampaha') }}</p>
+                    <p><a href="tel:number">033 22 34142</a><br/>
+                        <a href="tel:number">033 22 22900</a><br/>
+                        <a href="tel:number">077 4342786</a></p>
                 </div>
 
                 <div>
-                    <p>කලුතර  -   ක්‍රිශාන් මහතා</p>
-                    <p>077 6368763</p>
+                    <p>{{ __('information.dmc.kalutara') }}</p>
+                    <p><a href="tel:number">077 6368763</a></p>
                 </div>
 
                 <div>
-                    <p>මාතර  -   විදානගේ මහතා</p>
-                    <p>041 22 22284<br/>
-                    041 22 22234<br/>
-                    071 8245180</p>
+                    <p>{{ __('information.dmc.matara') }}</p>
+                    <p><a href="tel:number">041 22 22284</a><br/>
+                        <a href="tel:number">041 22 22234</a><br/>
+                        <a href="tel:number">071 8245180</a></p>
                 </div>
                 
                 <div>
-                    <p>රත්නපුර  -  කුමාර මහතා</p>
-                    <p>045 22 22233<br/>
-                    045 22 22140<br/>
-                    071 4408835</p>
+                    <p>{{ __('information.dmc.ratnapura') }}</p>
+                    <p><a href="tel:number">045 22 22233</a><br/>
+                        <a href="tel:number">045 22 22140</a><br/>
+                        <a href="tel:number">071 4408835</a></p>
                 </div>
             </div>
         </div>
