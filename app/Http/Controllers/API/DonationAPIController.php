@@ -66,7 +66,7 @@ class DonationAPIController extends Controller
             if ($response) {
                 return response(array(
                         'error' => false,
-                        'message' => 'Donation added.',
+                        'message' => 'Donation successfully added.',
                         'data' => null
                     ),200); 
             } else {
@@ -114,7 +114,7 @@ class DonationAPIController extends Controller
         $response = $this->donation->updateDonation($request->all());
         if ( $response ) 
             return Response::json([
-                    'status' => 'success',
+                    'error' => false,
                     'code' => 200,
                     'message' => 'Donation successfully updated',
                     'data' => $response

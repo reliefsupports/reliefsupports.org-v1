@@ -62,7 +62,7 @@ class NeedsAPIController extends Controller
             if ($response) {
                 return redirect('/needs')
                     ->with('isSuccess', true)
-                    ->with('message', 'Needs added.');
+                    ->with('message', 'Needs successfully added.');
             } else {
                 return redirect('/needs/add')
                     ->with('isSuccess', false)
@@ -107,7 +107,7 @@ class NeedsAPIController extends Controller
         $response = $this->need->updateNeed($request->all());
         if ( $response ) 
             return Response::json([
-                    'status' => 'success',
+                    'error' => false,
                     'code' => 200,
                     'message' => 'Need successfully updated',
                     'data' => $response
