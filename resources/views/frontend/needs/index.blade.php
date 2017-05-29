@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
+
+    <script>
+        $(document).ready(function () {
+            $('#table_needs').DataTable();
+        });
+    </script>
+
     <div class="container main-container">
         <div class="row">
             <div class="col-md-12">
@@ -12,7 +19,7 @@
                 <p style="float: right;">
                     <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
                 </p>
-                <table class="table table-responsive">
+                <table id="table_needs" class="table table-responsive">
                     <thead>
                     <tr>
                         <th>#</th>
