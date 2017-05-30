@@ -60,6 +60,7 @@
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
+                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">Online Donations </a></li>
                 <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
             </ul>
         </div><!--/.nav-collapse -->
