@@ -6,20 +6,33 @@ use Illuminate\Http\Request;
 use App\Repositories\NeedsRepository;
 use App\Repositories\DonationRepository;
 
+use Illuminate\Support\Facades\Response;
+
+
+use App\Http\Controllers\NeedsController;
+use App\Http\Controllers\DonationController;
+
 class EntryController extends Controller
 {
     private $need;
     private $donation;
+
+    private $n;
+    private $d;
 
     /*
      * EntryController constructor.
      */
     public function __construct(
         DonationRepository $donationRepository,
-        NeedsRepository $needsRepository
+        NeedsRepository $needsRepository,
+        NeedsController $needsController,
+        DonationController $donationController
     ) {
         $this->need = $needsRepository;
         $this->donation = $donationRepository;
+        $this->d = $donationController;
+        $this->n = $needsController;
     }
 
     /**
@@ -31,11 +44,11 @@ class EntryController extends Controller
     {
         $entry = [];
         if ($type === 'need') {
-            $entry = $this->need->findNeed($id);
+            $entry = $this->n->getById($id);
         }
 
-        if ($type === 'need') {
-            $entry = $this->donation->findDonation($id);
+        if ($type === 'donation') {
+            $entry = $this->d->getById($id);
         }
 
         return view('/frontend/entry/view')

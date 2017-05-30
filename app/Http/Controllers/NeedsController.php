@@ -124,6 +124,10 @@ class NeedsController extends Controller
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
+    public function getById($id = null) {
+        return $this->need->findNeed($id);
+    }
+
     public function post(Request $request) {
         $response = array(
             'error' => true,

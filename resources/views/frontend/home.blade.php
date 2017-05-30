@@ -30,6 +30,7 @@
                         <th>පිරිස</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -48,7 +49,23 @@
                                 <td>N/A</td>
                                 @endif
                                 <td>{{ $need->created_at }}</td>
-                                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary read-needs"
+                                        data-id="{{ $need->id }}"
+                                    >
+                                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button> -->
+                                </td>
+                                <td>
+                                    <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
+                                        <button type="button" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     @endif
@@ -75,6 +92,7 @@
                         <th>දුරකථන</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -87,7 +105,22 @@
                             <td>{{ $donation->city }}</td>
                             <td>{{ $donation->telephone }}</td>
                             <td>{{ $donation->created_at }}</td>
-                            <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
+                            <td>
+                                <button
+                                    type="button"
+                                    class="btn btn-primary read-donation"
+                                    data-id="{{ $donation->id }}"
+                                >
+                                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <a target="_blank" href="http://reliefsupports.org/entry/donation/{{$donation->id}}">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                                    </button>
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
