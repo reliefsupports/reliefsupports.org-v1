@@ -10,7 +10,7 @@
     <meta property="og:image" content=""/>
     <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
     <meta property="og:description" content="This is a community driven Open Source project to support relief support activities conduct by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
-    
+
     <!-- Loading Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,7 +31,7 @@
     * {
         font-family: 'Abhaya Libre', serif;
     }
-    
+
     body {
         padding-top: 95px;
     }
@@ -69,7 +69,7 @@
 
 @yield('content')
 <!-- /.container -->
-
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-504627a727520762"></script>
 <footer>
     <div class="container">
         <div class="row">
