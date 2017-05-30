@@ -55,7 +55,7 @@ class NeedsController extends Controller
             'address' => 'required|max:100',
             'city' => 'required|max:50',
             'needs' => 'required',
-            'latlon'=> 'max:30'
+            'geolocation'=> 'max:60'
         ]);
 
         if ($validator->fails()) {

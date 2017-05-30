@@ -14,7 +14,7 @@ class AddLatlonToNeeds extends Migration
     public function up()
     {
         Schema::table('needs', function($table) {
-            $table->string('latlon')->nullable();
+            $table->string('geolocation')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddLatlonToNeeds extends Migration
     public function down()
     {
         Schema::table('needs', function($table) {
-            $table->dropColumn('latlon');
+            $table->dropColumn('geolocation');
         });
     }
 }

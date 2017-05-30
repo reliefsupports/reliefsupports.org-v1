@@ -31,24 +31,18 @@
                     <div class="form-group">
                         <label for="address" class="col-lg-2 control-label">ඔබගේ ලිපිනය</label>
                         <div class="col-lg-10">
-                            <textarea class="form-control" rows="4" id="address" name="address" required>{{ old('address') }}</textarea>
+                            <textarea class="form-control" rows="4" id="address" name="address" required onkeyup="getLocation()">{{ old('address') }}</textarea>
                         </div>
                     </div>
                      <div class="form-group">
                         <label for="latlon" class="col-lg-2 control-label">ඔබ සිටින ස්ථනය සිතියමෙන්</label>
                         <div class="col-lg-10">
-                            <input type="hidden" class="form-control" id="latlon" name="latlon"  value="{{ old('latlon') }}"/>
-                              <button type="button" onclick="getLocation()" class="btn btn-primary">සිතියමට ඇතුල් කරන්න</button>
-                            <p id="demo">&nbsp;</p>
+                            <input type="hidden" class="form-control" id="geolocation" name="geolocation"  value="{{ old('latlon') }}"/>
+                            <p id="map_messages">&nbsp;</p>
                                 <div id="mapholder" style="width:55%;height:300px">
-                                </div>
-                            
-                        </div>
-
-
-                        
+                                </div>                          
+                        </div>                       
                     </div>
-
                     <div class="form-group">
                         <label for="city" class="col-lg-2 control-label">ආසන්නම නගරය/ප්‍රා.ලේ කොට්ටාසය </label>
                         <div class="col-lg-10">
@@ -75,57 +69,82 @@
                 </form>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
-
-     
-
         <script>
         var map;
+        var geocoder;
+        var x;
+        var marker;
+            //initialize map using call back
             function myMap() {
-            
-              var myCenter = new google.maps.LatLng(6.9271,79.9912);
-                
-                
+              var myCenter = new google.maps.LatLng(6.9271,79.9912);                
               var mapCanvas = document.getElementById("mapholder");
               var mapOptions = {center: myCenter, zoom: 8};
               map = new google.maps.Map(mapCanvas, mapOptions);
+              geocoder = new google.maps.Geocoder();
+              x=document.getElementById("map_messages");
 
-            }
-
-
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition, showError);
-                } else {
-                    x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-            }
-
-            function showPosition(position) {
-                var latlon = position.coords.latitude + "," + position.coords.longitude;
-                document.getElementById("latlon").value=latlon;
-
+              //marker obj
                 marker = new google.maps.Marker({
-                map: map,
-                draggable: true,
-                animation: google.maps.Animation.DROP,
-                position: {lat: position.coords.latitude, lng: position.coords.longitude}
-              });
+                    map: map,
+                    draggable: true,
+                    animation: google.maps.Animation.DROP       
+                });
+
+                //marker drag listener
+                 marker.addListener('dragend', function() {
+                    var lat = marker.getPosition().lat();
+                    var lng = marker.getPosition().lng();
+                    document.getElementById("geolocation").value=lat+","+lng;
+                    x.innerHTML=lat+","+lng;
+
+                  });
+            }
+            
+            //user input address
+            function getLocation() {
+
+                var address=document.getElementById("address").value;
+                codeAddress(address);
+            }
+            //address to longitude and latitude
+            function codeAddress(address) {
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        showPosition(results[0].geometry.location);
+                    } else {
+                        showError(status);
+                    }
+                });
+            }
+
+            //show position using marker
+            function showPosition(position) {
+               
+                var lat_lng = position.lat() + "," + position.lng();
+                var latlng = new google.maps.LatLng(position.lat(), position.lng());
+                marker.setPosition(latlng);
+                document.getElementById("geolocation").value=lat_lng;
+                x.innerHTML=lat_lng;
             }
 
 
             function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    x.innerHTML = "User denied the request for Geolocation."
+            switch(error) {
+                case "ZERO_RESULTS":
+                    x.innerHTML = "ඔබගේ ලිපිනය සොයාගත නොහැක . රතු පැහැති  සලකුණ ඇදගෙන යාමෙන්  ඔබ සිටින ස්ථානය ලකුණු කල හැක "
                     break;
-                case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
+                case "OVER_QUERY_LIMIT":
+                    x.innerHTML = "විමසුම් සීමාව ඉක්මවිය ."
                     break;
-                case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
+                case "REQUEST_DENIED":
+                    x.innerHTML = "ඉල්ලීම ප්‍රතික්ෂේප විය "
                     break;
-                case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
+                case "INVALID_REQUEST":
+                    x.innerHTML = "වලංගු නොවන ඉල්ලීමකි ."
+                    break;
+                case "UNKNOWN_ERROR":
+                    x.innerHTML="නැවත උත්සහ කරන්න";
                     break;
             }
         }
