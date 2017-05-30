@@ -27,7 +27,7 @@
     }
     
     body {
-        padding-top: 120px;
+        padding-top: 95px;
     }
 
     .main-container {
