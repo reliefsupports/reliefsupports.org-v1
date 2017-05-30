@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
