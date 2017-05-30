@@ -126,7 +126,6 @@
                     </dl>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="share">Share</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div><!-- /.modal-content -->
@@ -159,7 +158,6 @@
                     </dl>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="share_d">Share</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div><!-- /.modal-content -->
