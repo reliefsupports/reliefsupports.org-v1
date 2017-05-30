@@ -28,7 +28,7 @@ return [
 		'extra'		=> 'Extra details (If Any)',
 		'group'		=> 'Group Size',
 		'group_size'=> 'No. of People With You',
-		'entered_by'=> 'Entered By'
+		'entered_by'=> 'Entered At'
 	],
 	
 	'general' => [
