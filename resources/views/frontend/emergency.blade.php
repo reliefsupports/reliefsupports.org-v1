@@ -4,42 +4,48 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3>ආපදා කළමනාකරණ මධ්‍යස්ථානයේ  දුරකථන අoක සහ අදාල ප්‍රදේශ භාර නිළධාරීන්ගේ විස්තර.</h3>
+                <h3>{{ __('information.dmc.official_numbers') }}</h3>
 
                 <div>
-                    <p>කොළඹ   -  නන්දසිරි මහතා</p>
+                    <p>{{ __('information.dmc.colombo') }}</p>
+
                     <p><a href="tel:0112325511">011 2325511</a><br/>
                         <a href="tel:0112437242">011 2437242</a><br/>
                         <a href="tel:077 8819389">077 8819389</a></p>
                 </div>
 
                 <div>
-                    <p>ගාල්ල  -  සේදර මහතා</p>
+                    <p>{{ __('information.dmc.galle') }}</p>
+
                     <p><a href="tel:0912247175">091 22 47175</a><br/>
                         <a href="tel:0771761692">077 1761692</a></p>
                 </div>
 
                 <div>
-                    <p>ගමපහ  -  කුසුම්සිරි මහතා</p>
+                    <p>{{ __('information.dmc.gampaha') }}</p>
+
                     <p><a href="tel:0332234142">033 22 34142</a><br/>
                         <a href="tel:0332222900">033 22 22900</a><br/>
                         <a href="tel:0774342786">077 4342786</a></p>
                 </div>
 
                 <div>
-                    <p>කලුතර  -   ක්‍රිශාන් මහතා</p>
+                    <p>{{ __('information.dmc.kalutara') }}</p>
+
                     <p><a href="tel:0776368763">077 6368763</a></p>
                 </div>
 
                 <div>
-                    <p>මාතර  -   විදානගේ මහතා</p>
+                    <p>{{ __('information.dmc.matara') }}</p>
+
                     <p><a href="tel:0412222284">041 22 22284</a><br/>
                         <a href="tel:0412222234">041 22 22234</a><br/>
                         <a href="tel:0718245180">071 8245180</a></p>
                 </div>
 
                 <div>
-                    <p>රත්නපුර  -  කුමාර මහතා</p>
+                    <p>{{ __('information.dmc.ratnapura') }}</p>
+
                     <p><a href="tel:0452222233">045 22 22233</a><br/>
                         <a href="tel:0452222140">045 22 22140</a><br/>
                         <a href="tel:0714408835">071 4408835</a></p>

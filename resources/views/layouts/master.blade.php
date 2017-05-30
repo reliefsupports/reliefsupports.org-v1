@@ -56,12 +56,29 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">මුල් පිටුව </a></li>
-                <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
-                <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
-                <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
-                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">Online Donations </a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
+                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">{{ __('interface.main_menu.front') }}</a></li>
+                <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">{{ __('interface.main_menu.aid') }}</a></li>
+                <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">{{ __('interface.main_menu.needs') }}</a></li>
+                <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('interface.main_menu.ess_phone_nos') }}</a></li>
+                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">{{ __('interface.main_menu.online_donations') }}</a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">{{ __('interface.main_menu.twitter_feed') }}</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ __('interface.main_menu.lang') }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        @if(Lang::locale() != 'si')
+                        <li><a href="/lang/si">සිංහල</a></li>
+                        @endif
+                        @if(Lang::locale() != 'ta')
+                        <li><a href="/lang/ta">தமிழ்</a></li>
+                        @endif
+                        @if(Lang::locale() != 'en')
+                        <li><a href="/lang/en">English</a></li>
+                        @endif
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -75,14 +92,13 @@
         <div class="row">
             <div class="col-md-7 col-xs-12">
                 <h3 class="footer-title">© Relief Supports {{ date('Y') }}</h3>
-                <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.</p>
-                <p>මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+                <p>{{ __('information.frontpage.aim') }}</p>
             </div> <!-- /col-xs-7 -->
 
             <div class="col-md-5 col-xs-12">
                 <div class="footer-banner">
                     <h3 class="footer-title">Disclamier</h3>
-                    <p>මෙහි ඇති එක් එක් තොරතුරු ඒ ඒ පුද්ගලයන් විසින් වෙබ් අඩවියට ඇතුලත් කර ඇති අතර ඒවයේ නිරවද්‍යතාවය සම්බණ්දයෙන්  සොයාබලා කටයුතු කරන ලෙස කාරුණිකව ඉල්ලා සිටිමි.</p>
+                    <p>{{ __('information.frontpage.verify_details') }}</p>
                 </div>
             </div>
         </div>

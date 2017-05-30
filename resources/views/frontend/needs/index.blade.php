@@ -10,38 +10,9 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
+                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg">{{ __('interface.general.add_needs') }} &raquo;</button></a>
                 </p>
-                <table class="table table-responsive">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>නම</th>
-                        <th>අවශ්‍යතා</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>පිරිස</th>
-                        <th>ඇතුල්කලේ</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($needs as $need)
-                        <tr>
-                            <th scope="row">{{ $need->id }}</th>
-                            <td>{{ $need->name }}</td>
-                            <td>{{ str_limit($need->needs, 150) }}</td>
-                            <td>{{ str_limit($need->address, 200) }}</td>
-                            <td>{{ $need->city }}</td>
-                            <td>{{ $need->telephone }}</td>
-                            <td>{{ $need->heads }}</td>
-                            <td>{{ $need->created_at }}</td>
-                            <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                @include('frontend.needs.table')
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
 
