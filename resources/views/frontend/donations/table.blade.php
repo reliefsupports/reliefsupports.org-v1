@@ -20,7 +20,7 @@
             <td>{{ $donation->city }}</td>
             <td>{{ $donation->telephone }}</td>
             <td>{{ $donation->created_at }}</td>
-            <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
+            <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">{{ __('interface.general.read_full') }}</button></td>
         </tr>
     @endforeach
     </tbody>

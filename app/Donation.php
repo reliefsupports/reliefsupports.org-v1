@@ -12,6 +12,6 @@ class Donation extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'telephone', 'address', 'city', 'donation', 'information'
+        'name', 'telephone', 'address', 'city', 'donation', 'information', 'source'
     ];
 }

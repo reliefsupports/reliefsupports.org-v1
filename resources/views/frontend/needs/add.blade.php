@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-md-offset-2">
-                            {!! app('captcha')->display(); !!}
+                            {!! app('captcha')->render(); !!}
                         </div>
                     </div>
                     <div class="form-group">

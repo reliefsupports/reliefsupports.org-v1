@@ -28,9 +28,13 @@
                 <td>N/A</td>
                 @endif
                 <td>{{ $need->created_at }}</td>
-                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">{{ __('interface.general.read_full') }}</button></td>
             </tr>
         @endforeach
     @endif
     </tbody>
+<<<<<<< HEAD
 </table>
+=======
+</table>
+>>>>>>> dev

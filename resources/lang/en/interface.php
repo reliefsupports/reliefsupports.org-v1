@@ -13,7 +13,8 @@ return [
 		'aid'	=> 'Donations',
 		'needs' => 'Needs',
 		'ess_phone_nos' => 'Essential Phone Numbers',
-		'twitter_feed' 	=> '#FloodSL Twitter Feed'
+		'twitter_feed' 	=> '#FloodSL Twitter Feed',
+        'online_donations' => 'Online Donations'
     ],
     
     'details' => [
@@ -28,7 +29,7 @@ return [
 		'extra'		=> 'Extra details (If Any)',
 		'group'		=> 'Group Size',
 		'group_size'=> 'No. of People With You',
-		'entered_by'=> 'Entered At'
+		'entered_at'=> 'Entered At'
 	],
 	
 	'general' => [
@@ -39,6 +40,7 @@ return [
 		'add_aid'		=> 'Add Donations',
 		'your' 		=> 'Your',
 		'submit'	=> 'Submit',
-		'tweets' 	=> 'Tweets about #FloodReliefLKA, #FloodSL'
+		'tweets' 	=> 'Tweets about #FloodReliefLKA, #FloodSL',
+        'read_full' => 'Read Full'
 	]
 ];
