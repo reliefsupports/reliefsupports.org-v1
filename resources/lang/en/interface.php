@@ -9,6 +9,7 @@ return [
     */
     
     'main_menu' => [
+        'lang'  => 'English',
 		'front' => 'Front Page',
 		'aid'	=> 'Donations',
 		'needs' => 'Needs',

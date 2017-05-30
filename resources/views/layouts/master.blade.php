@@ -66,11 +66,17 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Switch Language <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ __('interface.main_menu.lang') }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        @if(Lang::locale() != 'si')
                         <li><a href="/lang/si">සිංහල</a></li>
+                        @endif
+                        @if(Lang::locale() != 'ta')
                         <li><a href="/lang/ta">தமிழ்</a></li>
+                        @endif
+                        @if(Lang::locale() != 'en')
                         <li><a href="/lang/en">English</a></li>
+                        @endif
                     </ul>
                 </li>
             </ul>
