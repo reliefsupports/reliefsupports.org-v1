@@ -53,48 +53,53 @@ class NeedsAPIController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/needs/add')
-                ->with('isSuccess', false)
-                ->with('errors', $validator->errors()->all())
-                ->withInput();
+            return response(array(
+                    'error' => true,
+                    'message' => 'Validation error.',
+                    'data' => $validator->errors()->all()
+                ),400); 
         } else {
             $response = $this->need->addNeed($request->all());
             if ($response) {
-                return redirect('/needs')
-                    ->with('isSuccess', true)
-                    ->with('message', 'Needs successfully added.');
+                return response(array(
+                        'error' => false,
+                        'message' => 'Needs added.',
+                        'data' => null
+                    ),200); 
             } else {
-                return redirect('/needs/add')
-                    ->with('isSuccess', false)
-                    ->with('errors', ['Needs adding failed. Please try again.'])
-                    ->withInput();
+                return response(array(
+                        'error' => true,
+                        'message' => 'Needs adding failed. Please try again.',
+                        'data' => null
+                    ),400); 
             }
         }
     }
-    
+
     /**
      * Update donation
      *
+     * @param $id
      * @param Request $request
      * @return JSON
      */ 
     public function update($id, Request $request)
     {
-        $need = $this->donation->findNeed($id);
-        
+        $need = $this->need->findNeed($id);
+
         if( !$need )
             return response(array(
                     'error' => true,
                     'message' => 'Need not found.',
                     'data' => null
-                ),200); 
+                ),400); 
         
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:100',
-            'telephone' => 'required|max:100',
-            'address' => 'required|max:100',
-            'city' => 'required|max:50',
-            'needs' => 'required'
+            'name' => 'sometimes|required|max:100',
+            'telephone' => 'sometimes|required|max:100',
+            'address' => 'sometimes|required|max:100',
+            'city' => 'sometimes|required|max:50',
+            'needs' => 'sometimes|required'
         ]);
 
         if ( $validator->fails() ) 
@@ -102,12 +107,12 @@ class NeedsAPIController extends Controller
                     'error' => true,
                     'message' => 'validation error',
                     'data' => $validator->errors()
-                ),200);
+                ),400);
         
-        $response = $this->need->updateNeed($request->all());
+        $response = $this->need->updateNeed($id, $request->all());
         if ( $response ) 
             return Response::json([
-                    'error' => false,
+                    'status' => 'success',
                     'code' => 200,
                     'message' => 'Need successfully updated',
                     'data' => $response
@@ -117,9 +122,9 @@ class NeedsAPIController extends Controller
                 'error' => true,
                 'message' => 'Need update failed. Please try again.',
                 'data' => null
-            ),200); 
+            ),400); 
     }
-    
+
     /**
      * return a need
      *
@@ -141,7 +146,7 @@ class NeedsAPIController extends Controller
                 'error' => true,
                 'message' => 'Need not found.',
                 'data' => null
-            ),200); 
+            ),400); 
         }
     }
 
