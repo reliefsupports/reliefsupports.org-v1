@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="/public/css/flat-ui.min.css" rel="stylesheet">
+    <link href="{{ asset('css/flat-ui.min.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
     * {
         font-family: 'Abhaya Libre', serif;
     }
-    
+
     body {
         padding-top: 95px;
     }
@@ -60,7 +60,8 @@
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL</a></li>
+                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">Online Donations </a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -89,12 +90,13 @@
 </footer>
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-<script src="/public/js/vendor/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+
+<script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/public/js/vendor/video.js"></script>
-<script src="/public/js/flat-ui.min.js"></script>
-<script src="/public/js/donations.js"></script>
+<script src="{{ asset('js/vendor/video.js') }}"></script>
+<script src="{{ asset('js/flat-ui.min.js') }}"></script>
+<script src="{{ asset('js/donations.js') }}"></script>
 
 </body>
 </html>

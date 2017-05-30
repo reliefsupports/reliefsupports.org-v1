@@ -52,13 +52,23 @@ class DonationController extends Controller
      */
     public function save(Request $request)
     {
+        $messages = [
+            'name.required' => 'නම ඇතුලත් කිරීම අනිවාර්යයි',
+            'telephone.required' => 'දුරකථන අංක ඇතුලත් කිරීම අනිවාර්යයි',
+            'address.required' => 'ලිපිනය ඇතුලත් කිරීම අනිවාර්යයි',
+            'city.required' => 'නගරය/ප්‍රා.ලේ කොට්ටාසය ඇතුලත් කිරීම අනිවාර්යයි',
+            'needs.required' => 'අවශ්‍යතා ඇතුලත් කිරීම අනිවාර්යයි',
+            'g-recaptcha-response.required' => 'ඔබව තහවුරු කිරීම අනිවාර්යයි'
+        ];
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:100',
             'telephone' => 'required|max:100',
             'address' => 'required|max:100',
             'city' => 'required|max:50',
             'donation' => 'required',
-        ]);
+            'g-recaptcha-response' => 'required|captcha'
+        ], $messages);
         
         if ($validator->fails()) {
             return redirect('/donations/add')
@@ -71,11 +81,11 @@ class DonationController extends Controller
             if ($response) {
                 return redirect('/donations')
                     ->with('isSuccess', true)
-                    ->with('message', 'Donation added.');
+                    ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
             } else {
                 return redirect('/donations/add')
                     ->with('isSuccess', false)
-                    ->with('errors', ['Donation adding failed. Please try again.'])
+                    ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])
                     ->withInput();
             }
         }
@@ -103,6 +113,17 @@ class DonationController extends Controller
         }
     }
 
+    /**
+     * Show online donations
+     *
+     * @return page
+     */
+    public function showOnlineDonations()
+    {
+        return view('/frontend/donations/onlineDonation');
+    }
+  
+  
     public function get($id = null) {
         $response = array(
             'error' => true,
@@ -115,7 +136,7 @@ class DonationController extends Controller
         $response['data'] = $donations;
         $response['error'] = false;
 
-        return json_encode($response);
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
     public function post(Request $request) {
@@ -123,9 +144,18 @@ class DonationController extends Controller
             'error' => true,
             'data' => null
         );
-        if ( $this->donation->addDonation($request->all()) ) {
-            $response['error'] = false;
+        // [TODO]
+        // Add proper auth.
+        $src = $request->input('source');
+        if ($src === 'fbbot') {
+            if ( $this->need->addNeed($request->all()) ) {
+                $response['error'] = false;
+            }            
+        } else {
+            $response['error'] = true;
         }
-        return json_encode($response);
+        // $request->request->add(['source' => 'api']);
+        
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 }
