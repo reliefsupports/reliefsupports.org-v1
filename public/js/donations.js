@@ -1,3 +1,30 @@
+$.fn.modal.Constructor.prototype.enforceFocus = function() {};
+new Clipboard('.btn');
+
+$('#share').tooltip({
+  trigger: 'click',
+  placement: 'bottom',
+  title: 'URL copied'
+});
+
+$("#share").click(function(){
+    setTimeout(function() {
+    $('#share').tooltip('hide');
+  }, 1000);
+});
+
+$('#share_d').tooltip({
+  trigger: 'click',
+  placement: 'bottom',
+  title: 'URL copied'
+});
+
+$("#share_d").click(function(){
+    setTimeout(function() {
+    $('#share_d').tooltip('hide');
+  }, 1000);
+});
+
 $('.read-donation').on('click', function () {
     var id = $(this).data('id');
     $.ajax({
@@ -17,6 +44,7 @@ $('.read-donation').on('click', function () {
                 modal.find('#donation').html(data.donation.donation);
                 modal.find('#information').html(data.donation.information);
                 modal.find('#added').html(data.donation.created_at);
+                modal.find('#share_d').attr("data-clipboard-text","http://reliefsupports.org/entry/donation/"+data.donation.id);
             } else {
                 modal.find('#title').html('Donation #' + data.donation.id);
                 modal.find('.modal-body').html('<p>Something went wrong. Please try again.</p>');
@@ -45,6 +73,7 @@ $('.read-needs').on('click', function () {
                 modal.find('#needs').html(data.need.needs);
                 modal.find('#heads').html(data.need.heads);
                 modal.find('#added').html(data.need.created_at);
+                modal.find('#share').attr("data-clipboard-text","http://reliefsupports.org/entry/need/"+data.need.id);
             } else {
                 modal.find('#title').html('Need #' + data.need.id);
                 modal.find('.modal-body').html('<p>Something went wrong. Please try again.</p>');
