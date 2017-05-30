@@ -17,27 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="{{ asset("css/flat-ui.min.css") }}" rel="stylesheet">
+    <link href="/public/css/flat-ui.min.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
     <script src="/public/js/vendor/html5shiv.js"></script>
     <script src="/public/js/vendor/respond.min.js"></script>
     <![endif]-->
-
-    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script src="{{ asset("js/vendor/jquery.min.js") }}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset("js/vendor/video.js") }}"></script>
-    <script src="{{ asset("js/flat-ui.min.js") }}"></script>
-    <script src="{{ asset("js/donations.js") }}"></script>
-
-    <!-- DataTables -->
-    <link href="{{ asset("datatable/dataTables.bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
-    <!-- DataTables -->
-    <script src="{{ asset ("datatable/jquery.dataTables.min.js") }}" type="text/javascript"></script>
-    <script src="{{ asset ("datatable/dataTables.bootstrap.min.js") }}" type="text/javascript"></script>
-
 </head>
 <body>
 
@@ -74,6 +60,7 @@
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">{{ __('interface.main_menu.aid') }}</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">{{ __('interface.main_menu.needs') }}</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('interface.main_menu.ess_phone_nos') }}</a></li>
+                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">{{ __('interface.main_menu.online_donations') }}</a></li>
                 <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">{{ __('interface.main_menu.twitter_feed') }}</a></li>
             </ul>
 
@@ -112,6 +99,12 @@
     </div>
 </footer>
 
+<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+<script src="/public/js/vendor/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/public/js/vendor/video.js"></script>
+<script src="/public/js/flat-ui.min.js"></script>
+<script src="/public/js/donations.js"></script>
 
 </body>
 </html>

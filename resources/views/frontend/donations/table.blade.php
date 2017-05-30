@@ -6,7 +6,7 @@
         <th>{{ __('interface.details.address') }}</th>
         <th>{{ __('interface.details.city') }}</th>
         <th>{{ __('interface.details.phone') }}</th>
-        <th>{{ __('interface.details.entered_by') }}</th>
+        <th>{{ __('interface.details.entered_at') }}</th>
         <th></th>
     </tr>
     </thead>
@@ -20,7 +20,7 @@
             <td>{{ $donation->city }}</td>
             <td>{{ $donation->telephone }}</td>
             <td>{{ $donation->created_at }}</td>
-            <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
+            <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">{{ __('interface.general.read_full') }}</button></td>
         </tr>
     @endforeach
     </tbody>

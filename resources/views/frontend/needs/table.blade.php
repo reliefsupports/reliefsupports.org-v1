@@ -8,7 +8,7 @@
         <th>{{ __('interface.details.city') }}</th>
         <th>{{ __('interface.details.phone') }}</th>
         <th>{{ __('interface.details.group') }}</th>
-        <th>{{ __('interface.details.entered_by') }}</th>
+        <th>{{ __('interface.details.entered_at') }}</th>
         <th></th>
     </tr>
     </thead>
@@ -28,7 +28,7 @@
                 <td>N/A</td>
                 @endif
                 <td>{{ $need->created_at }}</td>
-                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">{{ __('interface.general.read_full') }}</button></td>
             </tr>
         @endforeach
     @endif

@@ -1,13 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <script>
-        $(document).ready(function () {
-            $('#table_needs').DataTable();
-        });
-    </script>
-
     <div class="container main-container">
         <div class="row">
             <div class="col-md-12">

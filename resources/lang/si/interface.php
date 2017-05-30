@@ -13,7 +13,8 @@ return [
 		'aid'	=> 'ආධාර',
 		'needs' => 'අවශ්‍යතාවයන්',
 		'ess_phone_nos' => 'අත්‍යවශ්‍ය දුරකථන  අංක',
-		'twitter_feed' 	=> '#FloodSL ට්විටර් පෝෂකය'
+		'twitter_feed' 	=> '#FloodSL ට්විටර් පෝෂකය',
+        'online_donations' => 'අන්තර්ජාලයෙන් ආධාර'
     ],
 
     'details' => [
@@ -28,7 +29,7 @@ return [
 		'extra'		=> 'අමතර විස්තර (ඇත්නම් පමණක්)',
 		'group'		=> 'පිරිස',
 		'group_size'=> 'ඔබ සමග සිටින පිරිස',
-		'entered_by'=> 'ඇතුල් කළේ'
+		'entered_at'=> 'ඇතුල් කළේ'
 	],
 
 	'general' => [
@@ -39,6 +40,7 @@ return [
 		'add_aid'		=> 'ආධාර එකතු කරන්න',
 		'your' 		=> 'ඔබගේ',
 		'submit'	=> 'එක් කරන්න',
-		'tweets' 	=> '#FloodReliefLKA, #FloodSL පිළිබඳ ට්වීට්'
+		'tweets' 	=> '#FloodReliefLKA, #FloodSL පිළිබඳ ට්වීට්',
+        'read_full' => 'මුළු විස්තර'
 	]
 ];
