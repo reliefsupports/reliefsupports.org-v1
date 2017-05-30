@@ -43,6 +43,14 @@
     footer {
         margin-top: 80px;
     }
+
+    .share-buttons img {
+        width: 35px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+    }
 </style>
 
 <!-- Static navbar -->
