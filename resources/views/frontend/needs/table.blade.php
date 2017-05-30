@@ -33,8 +33,4 @@
         @endforeach
     @endif
     </tbody>
-<<<<<<< HEAD
 </table>
-=======
-</table>
->>>>>>> dev
