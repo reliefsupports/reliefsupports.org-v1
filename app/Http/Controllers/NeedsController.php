@@ -6,18 +6,24 @@ use App\Repositories\NeedsRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Validator;
+use App\Services\FacebookNotification;
+use DomainException;
 
 class NeedsController extends Controller
 {
     private $need;
 
+    private $fbNotifier;
+
     /**
      * NeedsController constructor.
      * @param NeedsRepository $needsRepository
+     * @param FacebookNotification $fbNotifier
      */
-    public function __construct(NeedsRepository $needsRepository)
+    public function __construct(NeedsRepository $needsRepository, FacebookNotification $fbNotifier)
     {
         $this->need = $needsRepository;
+        $this->fbNotifier = $fbNotifier;
     }
 
     /**
@@ -68,17 +74,27 @@ class NeedsController extends Controller
         ], $messages);
 
         if ($validator->fails()) {
+
             return redirect('/needs/add')
                 ->with('isSuccess', false)
                 ->with('errors', $validator->errors()->all())
                 ->withInput();
         } else {
-            $response = $this->need->addNeed($request->all());
-            if ($response) {
+
+            try {
+
+                $need = $this->need->addNeed($request->all());
+
+                //need is being created first and if fb posting fail rest of the logic
+                //is executed
+                $fbId = $this->fbNotifier->publishNeed($need);
+                $this->need->updateNeed($need->id, ['fb_post_id' => $fbId]);
+
                 return redirect('/needs')
                     ->with('isSuccess', true)
                     ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
-            } else {
+                    
+            } catch (DomainException $e) {
                 return redirect('/needs/add')
                     ->with('isSuccess', false)
                     ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])

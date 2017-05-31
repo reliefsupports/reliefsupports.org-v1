@@ -11,6 +11,7 @@ namespace App\Repositories;
 use App\Need;
 use App\Repositories\Contracts\NeedsInterface;
 use Illuminate\Support\Facades\Log;
+use DomainException;
 
 class NeedsRepository implements NeedsInterface
 {
@@ -23,10 +24,20 @@ class NeedsRepository implements NeedsInterface
     public function addNeed($input)
     {
         try {
-            Need::create($input);
-            return true;
+            return Need::create($input);
         } catch (\Exception $e) {
-            Log::error($e->getMessage());
+            throw new DomainException('Unable to create need.');
+        }
+    }
+
+    public function updateNeed($id, array $input)
+    {
+        $need = $this->findNeed($id);
+        
+        if ($need) {
+            $need->fill($input);
+            return $need->save();
+        } else {
             return false;
         }
     }
