@@ -21,6 +21,7 @@
     <![endif]-->
 </head>
 <body>
+
 <!-- Static navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top navbar-lg" role="navigation">
     <div class="container">

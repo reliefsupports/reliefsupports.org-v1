@@ -10,6 +10,28 @@
 
 @import "flat-ui";
 
+// styles from master.blade
+body {
+	font-family: 'Abhaya Libre', serif;
+	padding-top: 95px;
+}
+
+.main-container {
+    min-height: 600px;
+}
+
+footer {
+    margin-top: 80px;
+    color: #666;
+}
+
+.share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
 
 //custom
 .hero {
@@ -32,64 +54,42 @@
 
 //responsive tables
 @media (max-width: 480px) {
-	.table-responsive {
+	#needs-table, #donations-table { 
+		border: 0;
 		thead { display: none; }
-		td {
-			display: block;
-			&:before {
-			    display: block;
-			    font-size: 80%;
-			    color: #999;
+		tbody {
+			tr {
+				th {
+					display: block;
+					line-height: 1.2;
+					border: none;
+				}
+				td { 
+					display: block;
+					line-height: 1.2;
+					border: solid #ddd;
+					border-width: 1px 1px 0;
+					&:last-child {
+						border-bottom-width: 1px;
+						margin-bottom: 10px;
+					}
+					&:before {
+					    display: block;
+					    font-size: 80%;
+					    color: #666;
+						content: attr(data-xs-label);
+					}
+				}
 			}
 		}
-		&#needs-table {
-			td:nth-of-type(1):before { content: "නම"; }
-			td:nth-of-type(2):before { content: "අවශ්‍යතා"; }
-			td:nth-of-type(3):before { content: "ලිපිනය"; }
-			td:nth-of-type(4):before { content: "නගරය"; }
-			td:nth-of-type(5):before { content: "දුරකථන"; }
-			td:nth-of-type(6):before { content: "පිරිස	"; }
-			td:nth-of-type(7):before { content: "ඇතුල්කලේ"; }
-		}
-		&#donations-table {
-			td:nth-of-type(1):before { content: "නම"; }
-			td:nth-of-type(2):before { content: "ආධාරය"; }
-			td:nth-of-type(3):before { content: "ලිපිනය"; }
-			td:nth-of-type(4):before { content: "නගරය"; }
-			td:nth-of-type(5):before { content: "දුරකථන"; }
-			td:nth-of-type(6):before { content: "ඇතුල්කලේ"; }
-		}
 	}
-}
 
-//footer mobile fix
+	.btn-mobile-block {
+	    white-space: normal;
+	}
 
-@media (max-width: 480px) {
+	//footer mobile fix 
 	.footer-banner {
 		margin-left: 0;
 	}
-}
-
-* {
-    font-family: 'Abhaya Libre', serif;
-}
-
-body {
-    padding-top: 95px;
-}
-
-.main-container {
-    min-height: 600px;
-}
-
-footer {
-    margin-top: 80px;
-}
-
-.share-buttons img {
-    width: 35px;
-    padding: 5px;
-    border: 0;
-    box-shadow: 0;
-    display: inline;
 }
