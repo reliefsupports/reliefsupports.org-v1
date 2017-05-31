@@ -1,13 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <script>
-        $(document).ready(function () {
-            $('#table_needs').DataTable();
-        });
-    </script>
-
     <div class="container main-container">
         <div class="row">
             <div class="col-md-12">
@@ -19,7 +12,7 @@
                 <p style="float: right;">
                     <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
                 </p>
-                <table id="table_needs" class="table table-responsive">
+                <table class="table table-responsive">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -30,6 +23,7 @@
                         <th>දුරකථන</th>
                         <th>පිරිස</th>
                         <th>ඇතුල්කලේ</th>
+                        <th></th>
                         <th></th>
                     </tr>
                     </thead>
@@ -44,7 +38,25 @@
                             <td>{{ $need->telephone }}</td>
                             <td>{{ $need->heads }}</td>
                             <td>{{ $need->created_at }}</td>
-                            <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                            <!-- <td>
+                                <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button>
+                            </td> -->
+                            <td>
+                                <button
+                                    type="button"
+                                    class="btn btn-primary read-needs"
+                                    data-id="{{ $need->id }}"
+                                >
+                                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                                    </button>
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
