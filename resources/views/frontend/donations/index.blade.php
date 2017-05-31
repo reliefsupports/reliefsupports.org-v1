@@ -28,7 +28,7 @@
                     <tbody>
                     @foreach($donations as $donation)
                     <tr>
-                        <th scope="row">{{ $donation->id }}</th>
+                        <th scope="row">{{ $donation->ref }}</th>
                         <td>{{ $donation->name }}</td>
                         <td>{{ str_limit($donation->donation, 150) }}</td>
                         <td>{{ str_limit($donation->address, 150) }}</td>

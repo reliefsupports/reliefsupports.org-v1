@@ -37,7 +37,7 @@
                     @if(count($needs) > 0)
                         @foreach($needs as $need)
                             <tr>
-                                <th scope="row">{{ $need->id }}</th>
+                                <th scope="row">{{ $need->ref }}</th>
                                 <td>{{ $need->name }}</td>
                                 <td>{{ str_limit($need->needs, 150) }}</td>
                                 <td>{{ str_limit($need->address, 200) }}</td>
@@ -98,7 +98,7 @@
                     <tbody>
                     @foreach($donations as $donation)
                         <tr>
-                            <th scope="row">{{ $donation->id }}</th>
+                            <th scope="row">{{ $donation->ref }}</th>
                             <td>{{ $donation->name }}</td>
                             <td>{{ str_limit($donation->donation, 150) }}</td>
                             <td>{{ str_limit($donation->address, 150) }}</td>

@@ -30,7 +30,7 @@
                     <tbody>
                     @foreach($needs as $need)
                         <tr>
-                            <th scope="row">{{ $need->id }}</th>
+                            <th scope="row">{{ $need->ref }}</th>
                             <td>{{ $need->name }}</td>
                             <td>{{ str_limit($need->needs, 150) }}</td>
                             <td>{{ str_limit($need->address, 200) }}</td>
