@@ -18,7 +18,14 @@
               <tr> <td>ලිපිනය</td> <td>{{$data['entry']->address}}</td> </tr>
               <tr> <td>නගරය</td> <td>{{$data['entry']->city}}</td> </tr>
               <tr> <td>දුරකථන අංක</td> <td>{{$data['entry']->telephone}}</td> </tr>
-              <tr> <td>පිරිස</td> <td>{{$data['entry']->heads}}</td> </tr>
+              <tr>
+                <td>පිරිස</td> 
+                @if($data['entry']->heads && $data['entry']->heads > 0)
+                  <td>{{$data['entry']->heads}}</td>
+                @else
+                  <td>Not provided</td>
+                @endif
+              </tr>
               <tr> <td>ඇතුල්කලේ</td> <td>{{$data['entry']->created_at}}</td> </tr>
               <tr> <td>යාවත්කාලීන කලේ</td> <td>{{$data['entry']->updated_at}}</td> </tr>
             </tbody>
