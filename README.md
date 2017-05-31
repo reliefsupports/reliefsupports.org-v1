@@ -29,7 +29,7 @@ git clone git@github.com:reliefsupports/reliefsupports.org.git reliefsupports`
 ```
 docker-compose build
 docker-compose up -d
-docker exec -it reliefsupports_php_1 bash
+docker exec -it reliefsupportsorg_php_1 bash
 composer update
 
 chmod -R 777 storage/

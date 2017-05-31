@@ -37,7 +37,23 @@
                             <td data-xs-label="දුරකථන">{{ $need->telephone }}</td>
                             <td data-xs-label="පිරිස">{{ $need->heads }}</td>
                             <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
-                            <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
+                            <!-- <td>
+                                <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button>
+                            </td> -->
+                            <td>
+                                <button
+                                    type="button"
+                                    class="btn btn-primary read-needs"
+                                    data-id="{{ $need->id }}"
+                                >
+                                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                                </button>
+                                <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                                    </button>
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
