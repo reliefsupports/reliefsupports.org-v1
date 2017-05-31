@@ -8,8 +8,7 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-//flat-ui
-@import "resources/assets/css/flat-ui";
+@import "flat-ui";
 
 // styles from master.blade
 body {
@@ -24,6 +23,14 @@ body {
 footer {
     margin-top: 80px;
     color: #666;
+}
+
+.share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
 }
 
 //custom
@@ -76,6 +83,7 @@ footer {
 			}
 		}
 	}
+
 	.btn-mobile-block {
 	    white-space: normal;
 	}
