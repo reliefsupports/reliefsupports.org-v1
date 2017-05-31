@@ -44,6 +44,29 @@ chmod -R 777 storage/
 chmod 777 bootstrap/cache
 ```
 
+#### Facebook intergration
+
+Facebook intergration automatically post need requests to a facebook page. A facebook app and administrative rights to a page is required. Using them an access token to page should be generated to put in .env file. The app does not need to be approved if the page admin has has administrative rights to the app.
+
+![](http://d.pr/i/R3WrWj+)
+
+![](http://d.pr/i/othvIj+)
+Click "Get Access Token"
+
+![](http://d.pr/i/JL3vnV+)
+
+The access token is short lived one (2 hours), now we need to convert it to long-lived.
+
+Visit below url and it will give you the access token
+
+`https://graph.facebook.com/oauth/access_token?             
+    client_id=APP_ID&
+    client_secret=APP_SECRET&
+    grant_type=fb_exchange_token&
+    fb_exchange_token=EXISTING_ACCESS_TOKEN `
+
+Refer to .env.sample to place the credentials.
+
 ### Pull requests
 
 Send all the PRs to `dev` branch. We keep `master` and `prod` branches only for final releases and all the development works on the `dev`.
