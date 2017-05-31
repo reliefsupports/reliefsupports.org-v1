@@ -30,7 +30,6 @@
                         <th>පිරිස</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,17 +37,17 @@
                         @foreach($needs as $need)
                             <tr>
                                 <th scope="row">{{ $need->id }}</th>
-                                <td>{{ $need->name }}</td>
-                                <td>{{ str_limit($need->needs, 150) }}</td>
-                                <td>{{ str_limit($need->address, 200) }}</td>
-                                <td>{{ $need->city }}</td>
-                                <td>{{ $need->telephone }}</td>
+                                <td data-xs-label="නම">{{ $need->name }}</td>
+                                <td data-xs-label="අවශ්‍යතා">{{ str_limit($need->needs, 150) }}</td>
+                                <td data-xs-label="ලිපිනය">{{ str_limit($need->address, 200) }}</td>
+                                <td data-xs-label="නගරය">{{ $need->city }}</td>
+                                <td data-xs-label="දුරකථන">{{ $need->telephone }}</td>
                                 @if($need->heads && $need->heads > 0)
-                                <td>{{ $need->heads }}</td>
+                                <td data-xs-label="පිරිස">{{ $need->heads }}</td>
                                 @else
-                                <td>N/A</td>
+                                <td data-xs-label="පිරිස">N/A</td>
                                 @endif
-                                <td>{{ $need->created_at }}</td>
+                                <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
                                 <td>
                                     <button
                                         type="button"
@@ -58,8 +57,6 @@
                                         <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                                     </button>
                                     <!-- <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button> -->
-                                </td>
-                                <td>
                                     <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
                                         <button type="button" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
@@ -92,19 +89,18 @@
                         <th>දුරකථන</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($donations as $donation)
                         <tr>
                             <th scope="row">{{ $donation->id }}</th>
-                            <td>{{ $donation->name }}</td>
-                            <td>{{ str_limit($donation->donation, 150) }}</td>
-                            <td>{{ str_limit($donation->address, 150) }}</td>
-                            <td>{{ $donation->city }}</td>
-                            <td>{{ $donation->telephone }}</td>
-                            <td>{{ $donation->created_at }}</td>
+                            <td data-xs-label="නම">{{ $donation->name }}</td>
+                            <td data-xs-label="ආධාරය">{{ str_limit($donation->donation, 150) }}</td>
+                            <td data-xs-label="ලිපිනය">{{ str_limit($donation->address, 150) }}</td>
+                            <td data-xs-label="නගරය">{{ $donation->city }}</td>
+                            <td data-xs-label="දුරකථන">{{ $donation->telephone }}</td>
+                            <td data-xs-label="ඇතුල්කලේ">{{ $donation->created_at }}</td>
                             <td>
                                 <button
                                     type="button"
@@ -113,8 +109,6 @@
                                 >
                                     <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                                 </button>
-                            </td>
-                            <td>
                                 <a target="_blank" href="http://reliefsupports.org/entry/donation/{{$donation->id}}">
                                     <button type="button" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
