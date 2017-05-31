@@ -65,4 +65,14 @@ class NeedsRepository implements NeedsInterface
             return false;
         }
     }
+
+    public function getNeedsAsChunk($id, $start, $limit) {
+        try {
+            // return Need::find($id);
+            return Need::offset($start)->limit($limit)->get();
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
 }

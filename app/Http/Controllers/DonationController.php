@@ -144,21 +144,32 @@ class DonationController extends Controller
     }
 
     public function post(Request $request) {
+        $validRequest = false;
         $response = array(
             'error' => true,
             'data' => null
         );
-        // [TODO]
-        // Add proper auth.
+
         $src = $request->input('source');
-        if ($src === 'fbbot') {
+        $token = $request->input('apiToken');
+
+        if ($src === 'fbbot' && $token === env('API_TOKEN_FBBOT', NULL)) {
+            $validRequest = true;
+        }
+        if ($src === 'android' && $token === env('API_TOKEN_ANDROID', NULL)) {
+            $validRequest = true;
+        }
+        if ($src === 'ios' && $token === env('API_TOKEN_IOS', NULL)) {
+            $validRequest = true;
+        }
+
+        if ($validRequest) {
             if ( $this->donation->addDonation($request->all()) ) {
                 $response['error'] = false;
-            }            
+            }
         } else {
             $response['error'] = true;
         }
-        // $request->request->add(['source' => 'api']);
         
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }

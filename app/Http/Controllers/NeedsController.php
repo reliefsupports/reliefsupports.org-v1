@@ -109,12 +109,12 @@ class NeedsController extends Controller
         }
     }
 
-    public function get($id = null) {
+    public function get($id=null, $start=0, $limit=20) {
         $response = array(
             'error' => true,
             'data' => null
         );
-        $needs = $this->need->getNeeds();
+        $needs = $this->need->getNeedsAsChunk($id, $start, $limit)
         if (!$needs) {
             $needs = [];
         }
@@ -124,27 +124,38 @@ class NeedsController extends Controller
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
-    public function getById($id = null) {
+    public function getById($id=null) {
         return $this->need->findNeed($id);
     }
 
     public function post(Request $request) {
+        $validRequest = false;
         $response = array(
             'error' => true,
             'data' => null
         );
-        // [TODO]
-        // Add proper auth.
+
         $src = $request->input('source');
-        if ($src === 'fbbot') {
+        $token = $request->input('apiToken');
+
+        if ($src === 'fbbot' && $token === env('API_TOKEN_FBBOT', NULL)) {
+            $validRequest = true;
+        }
+        if ($src === 'android' && $token === env('API_TOKEN_ANDROID', NULL)) {
+            $validRequest = true;
+        }
+        if ($src === 'ios' && $token === env('API_TOKEN_IOS', NULL)) {
+            $validRequest = true;
+        }
+
+        if ($validRequest) {
             if ( $this->need->addNeed($request->all()) ) {
                 $response['error'] = false;
             }
         } else {
             $response['error'] = true;
         }
-        // $request->request->add(['source' => 'api']);
-
+        
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 }

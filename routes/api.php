@@ -14,8 +14,8 @@ use App\Repositories\NeedsRepository;
 |
 */
 
-Route::get('/v1/entry/needs', 'NeedsController@get');
+Route::get('/v1/entry/needs/{start?}/{limit?}', 'NeedsController@get');
 Route::post('/v1/entry/needs', 'NeedsController@post');
 
-Route::get('/v1/entry/donations', 'DonationController@get');
+Route::get('/v1/entry/donations/{start?}/{limit?}', 'DonationController@get');
 Route::post('/v1/entry/donations', 'DonationController@post');
