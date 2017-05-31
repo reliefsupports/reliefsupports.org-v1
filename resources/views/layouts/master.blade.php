@@ -14,8 +14,8 @@
     <!-- Loading Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,700" rel="stylesheet">
+ 
     <!-- Loading Flat UI -->
     <link href="/public/css/flat-ui.min.css" rel="stylesheet">
 
