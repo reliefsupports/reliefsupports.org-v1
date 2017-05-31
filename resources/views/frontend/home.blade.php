@@ -45,7 +45,7 @@
                                 @if($need->heads && $need->heads > 0)
                                 <td data-xs-label="පිරිස">{{ $need->heads }}</td>
                                 @else
-                                <td data-xs-label="පිරිස">N/A</td>
+                                <td data-xs-label="පිරිස">Not provided</td>
                                 @endif
                                 <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
                                 <td>
