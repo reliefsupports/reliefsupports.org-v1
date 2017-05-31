@@ -57,6 +57,8 @@
                                         <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                                     </button>
                                     <!-- <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button> -->
+                                </td>
+                                <td>
                                     <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
                                         <button type="button" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
