@@ -10,9 +10,9 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් ආධාර එකතු කරන්න</button></a>
+                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">මෙතනින් ආධාර එකතු කරන්න</button></a>
                 </p>
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -29,12 +29,12 @@
                     @foreach($donations as $donation)
                     <tr>
                         <th scope="row">{{ $donation->id }}</th>
-                        <td>{{ $donation->name }}</td>
-                        <td>{{ str_limit($donation->donation, 150) }}</td>
-                        <td>{{ str_limit($donation->address, 150) }}</td>
-                        <td>{{ $donation->city }}</td>
-                        <td>{{ $donation->telephone }}</td>
-                        <td>{{ $donation->created_at }}</td>
+                        <td data-xs-label="නම">{{ $donation->name }}</td>
+                        <td data-xs-label="ආධාරය">{{ str_limit($donation->donation, 150) }}</td>
+                        <td data-xs-label="ලිපිනය">{{ str_limit($donation->address, 150) }}</td>
+                        <td data-xs-label="නගරය">{{ $donation->city }}</td>
+                        <td data-xs-label="දුරකථන">{{ $donation->telephone }}</td>
+                        <td data-xs-label="ඇතුල්කලේ">{{ $donation->created_at }}</td>
                         <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td>
                     </tr>
                     @endforeach

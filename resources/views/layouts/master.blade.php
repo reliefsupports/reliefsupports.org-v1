@@ -16,24 +16,6 @@
 </head>
 <body>
 
-<style>
-    * {
-        font-family: 'Abhaya Libre', serif;
-    }
-    
-    body {
-        padding-top: 95px;
-    }
-
-    .main-container {
-        min-height: 600px;
-    }
-
-    footer {
-        margin-top: 80px;
-    }
-</style>
-
 <!-- Static navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top navbar-lg" role="navigation">
     <div class="container">

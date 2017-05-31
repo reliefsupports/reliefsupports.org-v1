@@ -10,9 +10,9 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
+                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
                 </p>
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -30,13 +30,13 @@
                     @foreach($needs as $need)
                         <tr>
                             <th scope="row">{{ $need->id }}</th>
-                            <td>{{ $need->name }}</td>
-                            <td>{{ str_limit($need->needs, 150) }}</td>
-                            <td>{{ str_limit($need->address, 200) }}</td>
-                            <td>{{ $need->city }}</td>
-                            <td>{{ $need->telephone }}</td>
-                            <td>{{ $need->heads }}</td>
-                            <td>{{ $need->created_at }}</td>
+                            <td data-xs-label="නම">{{ $need->name }}</td>
+                            <td data-xs-label="අවශ්‍යතා">{{ str_limit($need->needs, 150) }}</td>
+                            <td data-xs-label="ලිපිනය">{{ str_limit($need->address, 200) }}</td>
+                            <td data-xs-label="නගරය">{{ $need->city }}</td>
+                            <td data-xs-label="දුරකථන">{{ $need->telephone }}</td>
+                            <td data-xs-label="පිරිස">{{ $need->heads }}</td>
+                            <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
                             <td><button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button></td>
                         </tr>
                     @endforeach
