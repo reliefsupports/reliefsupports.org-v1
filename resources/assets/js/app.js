@@ -6,7 +6,7 @@
  */
 
 require('./vendor/jquery.min.js');
-require('./vendor/video')
+require('./vendor/video');
 require('./bootstrap');
 require('./flat-ui');
 
