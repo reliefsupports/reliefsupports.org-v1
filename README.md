@@ -38,10 +38,43 @@ chmod 777 bootstrap/cache
 
 #### On WAMP / XAMPP or other server
 
+* Install `composer`  https://getcomposer.org
+* create database `flood`
+* change `.env` db configs
+* Run following commands accordingly
+
 ```
-composer update
+composer install
+
 chmod -R 777 storage/
 chmod 777 bootstrap/cache
+
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+
+php artisan serve
+```
+
+App running at localhost:8000
+
+#### Compiling Assets
+
+```
+npm install
+
+// Run all Mix tasks...
+npm run dev
+
+// Run all Mix tasks and minify output...
+npm run production
+```
+
+#### Troubleshooting
+
+```
+composer install
+php artisan migrate
 ```
 
 ### Pull requests
