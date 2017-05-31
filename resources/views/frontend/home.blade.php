@@ -6,29 +6,28 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="well hero">
-            <h3>ආයුබෝවන්!!!</h3>
-            <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
-                මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+            <h3>{{ __('home.title') }}</h3>
+            <p>{{ __('home.text_block') }}</p>
             <p>
-                <a class="btn btn-lg btn-primary" href="/donations/add" role="button">ආධාර එකතු කරන්න &raquo;</a>
-                <a class="btn btn-lg btn-primary" href="/needs/add" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="/donations/add" role="button">{{ __('home.collect_donations') }}</a>
+                <a class="btn btn-lg btn-primary" href="/needs/add" role="button">{{ __('home.collect_needs') }}</a>
             </p>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <h4>නවතම අවශ්‍යතා </h4>
+                <h4>{{ __('home.latest_needs') }}</h4>
                 <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>නම</th>
-                        <th>අවශ්‍යතා</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>පිරිස</th>
-                        <th>ඇතුල්කලේ</th>
+                        <th>{{ __('home.table.name') }}</th>
+                        <th>{{ __('home.table.needs') }}</th>
+                        <th>{{ __('home.table.address') }}</th>
+                        <th>{{ __('home.table.city') }}</th>
+                        <th>{{ __('home.table.tel') }}</th>
+                        <th>{{ __('home.table.ppl') }}</th>
+                        <th>{{ __('home.table.entered_by') }}</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -85,12 +84,12 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>නම</th>
-                        <th>ආධාරය</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>ඇතුල්කලේ</th>
+                        <th>{{ __('home.table.name') }}</th>
+                        <th>{{ __('home.table.donation') }}</th>
+                        <th>{{ __('home.table.address') }}</th>
+                        <th>{{ __('home.table.city') }}</th>
+                        <th>{{ __('home.table.tel') }}</th>
+                        <th>{{ __('home.table.entered_by') }}</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -143,19 +142,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>නම</dt>
+                        <dt>{{ __('home.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>අවශ්‍යතා</dt>
+                        <dt>{{ __('home.table.needs') }}</dt>
                         <dd id="needs"></dd>
-                        <dt>ලිපිනය</dt>
+                        <dt>{{ __('home.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>නගරය</dt>
+                        <dt>{{ __('home.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>දුරකථන අංක</dt>
+                        <dt>{{ __('home.table.tels') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>පිරිස</dt>
+                        <dt>{{ __('home.table.ppl') }}</dt>
                         <dd id="heads"></dd>
-                        <dt>ඇතුල්කලේ</dt>
+                        <dt>{{ __('home.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>
@@ -175,19 +174,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>නම</dt>
+                        <dt>{{ __('home.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>ආධාරය</dt>
+                        <dt>{{ __('home.table.donation') }}</dt>
                         <dd id="donation"></dd>
-                        <dt>ලිපිනය</dt>
+                        <dt>{{ __('home.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>නගරය</dt>
+                        <dt>{{ __('home.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>දුරකථන අංක</dt>
+                        <dt>{{ __('home.table.tels') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>අමතර විස්තර </dt>
+                        <dt>{{ __('home.table.extra_info') }}</dt>
                         <dd id="information"></dd>
-                        <dt>ඇතුල්කලේ</dt>
+                        <dt>{{ __('home.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>
