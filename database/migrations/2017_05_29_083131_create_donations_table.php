@@ -21,8 +21,8 @@ class CreateDonationsTable extends Migration
             $table->string('city',255);
             $table->text('donation')->nullable();
             $table->text('information')->nullable();
-            $table->string('source',11);
-            $table->integer('status')->->default(0);
+            $table->string('source',11)->default(0);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

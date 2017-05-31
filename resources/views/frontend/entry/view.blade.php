@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="container main-container">
-    
+
     <div class="row">
       <div class="col-md-12">
 
@@ -63,13 +63,34 @@
       </div>
     </div>
 
+    <div id="disqus_thread"></div>
+    <script>
+
+
+        var disqus_config = function () {
+            this.page.url = '{{ url("/entry/".$data['type']."/".$data['id']) }}';
+            this.page.identifier = '{{ md5("need".$data['type'].$data['id']) }}';
+        };
+
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            // s.src = '//{{ env('DISQUS_KEY') }}.disqus.com/embed.js';
+            s.src = 'https://reliefsupports-org.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     <script type="text/javascript">
       function share(elm) {
         window.open(
-          elm.href, 
+          elm.href,
           'winname',
           'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=700,height=350');
-        return false; 
+        return false;
       }
     </script>
   </div><!-- /.container -->
