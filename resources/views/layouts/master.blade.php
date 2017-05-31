@@ -9,9 +9,10 @@
     <meta property="og:title" content="Relief Supports Sri Lanka"/>
     <meta property="og:image" content=""/>
     <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
-    <meta property="og:description" content="This is a community driven Open Source project to support relief support activities conduct by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
+    <meta property="og:description" content=" අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවන වෙබ් සේවාවක්. ඔබේ අවශ්‍යතා සහ ආධාර දැන්ම එක් කරන්න. Post your relief support activities and connect with people who need it the most. This is a community driven Open Source project to support relief support activities conducted by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
     
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="/public/css/app.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -69,7 +70,9 @@
             <div class="col-md-5 col-xs-12">
                 <div class="footer-banner">
                     <h3 class="footer-title">Disclamier</h3>
-                    <p>මෙහි ඇති එක් එක් තොරතුරු ඒ ඒ පුද්ගලයන් විසින් වෙබ් අඩවියට ඇතුලත් කර ඇති අතර ඒවයේ නිරවද්‍යතාවය සම්බණ්දයෙන්  සොයාබලා කටයුතු කරන ලෙස කාරුණිකව ඉල්ලා සිටිමි.</p>
+                    <p>මෙහි ඇති එක් එක් තොරතුරු ඒ ඒ පුද්ගලයන් විසින් වෙබ් අඩවියට ඇතුලත් කර ඇති අතර ඒවයේ නිරවද්‍යතාවය සම්බණ්දයෙන්  සොයාබලා කටයුතු කරන ලෙස කාරුණිකව ඉල්ලා සිටිමු.</p>
+                    <p>මමෙමෙ වෙබ් සේවාව ස්වේච්ඡා සේවාවක් සහ ව්‍යපෘතියකි. තවත් තොරතුරු සහ වැඩි දියුණු කිරීම සඳහා උදවු කිරීමට 
+<a href="https://github.com/reliefsupports/reliefsupports.org"> Github පිටුවට</a></p>
                 </div>
             </div>
         </div>
@@ -77,11 +80,11 @@
 </footer>
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-<script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
+<script src="/public/js/vendor/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('js/vendor/video.js') }}"></script>
-<script src="{{ asset('js/flat-ui.min.js') }}"></script>
-<script src="{{ asset('js/donations.js') }}"></script>
+<script src="/public/js/vendor/video.js"></script>
+<script src="/public/js/flat-ui.min.js"></script>
+<script src="/public/js/donations.js"></script>
 
 </body>
 </html>
