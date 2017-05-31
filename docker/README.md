@@ -11,7 +11,7 @@ bash test-deployment.sh up
 ```
 >In Windows the command to run is `docker-compose --file docker-compose.yml --project-name reliefsupportsorg build` followed by `docker-compose --file docker-compose.yml --project-name reliefsupportsorg up -d`.
 
-This command will start the two containers and expose the site through port `8080`.
+This command will start the two containers and expose the site through port `8080`. The required Docker images are downloaded from the [public Docker registry](https://hub.docker.com).
 
 Please allow several minutes (longer if a `compose update` was not done on the source already) to start the server. You can use `docker logs -f reliefsupportsorg_website_1` command to check the server logs. Wait until the line ` Command line: 'apache2 -D FOREGROUND'` appears.
 
