@@ -20,7 +20,7 @@
               <tr> <td>දුරකථන අංක</td> <td>{{$data['entry']->telephone}}</td> </tr>
               <tr> <td>පිරිස</td> <td>{{$data['entry']->heads}}</td> </tr>
               <tr> <td>ඇතුල්කලේ</td> <td>{{$data['entry']->created_at}}</td> </tr>
-              <tr> <td>යාවත්කාලීන කෙල්</td> <td>{{$data['entry']->updated_at}}</td> </tr>
+              <tr> <td>යාවත්කාලීන කලේ</td> <td>{{$data['entry']->updated_at}}</td> </tr>
             </tbody>
           </table>
         </div>
@@ -37,7 +37,7 @@
               <tr> <td>දුරකථන අංක</td> <td>{{$data['entry']->telephone}}</td> </tr>
               <tr> <td>අමතර විස්තර</td> <td>{{$data['entry']->information}}</td> </tr>
               <tr> <td>ඇතුල්කලේ</td> <td>{{$data['entry']->created_at}}</td> </tr>
-              <tr> <td>යාවත්කාලීන කෙල්</td> <td>{{$data['entry']->updated_at}}</td> </tr>
+              <tr> <td>යාවත්කාලීන කලේ</td> <td>{{$data['entry']->updated_at}}</td> </tr>
             </tbody>
           </table>
         </div>
