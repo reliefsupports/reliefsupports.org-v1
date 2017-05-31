@@ -1,4 +1,4 @@
-    {
+{
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "albertcht/invisible-recaptcha": "^1.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -49,14 +49,25 @@ class NeedsController extends Controller
      */
     public function save(Request $request)
     {
+        $messages = [
+            'name.required' => 'නම ඇතුලත් කිරීම අනිවාර්යයි',
+            'telephone.required' => 'දුරකථන අංක ඇතුලත් කිරීම අනිවාර්යයි',
+            'address.required' => 'ලිපිනය ඇතුලත් කිරීම අනිවාර්යයි',
+            'city.required' => 'නගරය/ප්‍රා.ලේ කොට්ටාසය ඇතුලත් කිරීම අනිවාර්යයි',
+            'needs.required' => 'ආධාර විස්තරය ඇතුලත් කිරීම අනිවාර්යයි',
+            'g-recaptcha-response.required' => 'ඔබව තහවුරු කිරීම අනිවාර්යයි'
+        ];
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:100',
             'telephone' => 'required|max:100',
             'address' => 'required|max:100',
             'city' => 'required|max:50',
             'needs' => 'required',
-            'geolocation'=> 'max:60'
-        ]);
+            'geolocation'=> 'max:60',
+            'g-recaptcha-response' => 'required|captcha'
+        ], $messages);
+
 
         if ($validator->fails()) {
             return redirect('/needs/add')
@@ -68,11 +79,11 @@ class NeedsController extends Controller
             if ($response) {
                 return redirect('/needs')
                     ->with('isSuccess', true)
-                    ->with('message', 'Needs added.');
+                    ->with('message', 'සාර්ථකව ඇතුලත්කරන ලදී.');
             } else {
                 return redirect('/needs/add')
                     ->with('isSuccess', false)
-                    ->with('errors', ['Needs adding failed. Please try again.'])
+                    ->with('errors', ['ඇතුලත්කිරීම දෝෂ සහිතය.'])
                     ->withInput();
             }
         }
@@ -115,14 +126,26 @@ class NeedsController extends Controller
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
+    public function getById($id = null) {
+        return $this->need->findNeed($id);
+    }
+
     public function post(Request $request) {
         $response = array(
             'error' => true,
             'data' => null
         );
-        if ( $this->need->addNeed($request->all()) ) {
-            $response['error'] = false;
+        // [TODO]
+        // Add proper auth.
+        $src = $request->input('source');
+        if ($src === 'fbbot') {
+            if ( $this->need->addNeed($request->all()) ) {
+                $response['error'] = false;
+            }
+        } else {
+            $response['error'] = true;
         }
+        // $request->request->add(['source' => 'api']);
 
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }

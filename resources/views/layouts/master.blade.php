@@ -9,13 +9,13 @@
     <meta property="og:title" content="Relief Supports Sri Lanka"/>
     <meta property="og:image" content=""/>
     <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
-    <meta property="og:description" content="This is a community driven Open Source project to support relief support activities conduct by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
+    <meta property="og:description" content=" අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවන වෙබ් සේවාවක්. ඔබේ අවශ්‍යතා සහ ආධාර දැන්ම එක් කරන්න. Post your relief support activities and connect with people who need it the most. This is a community driven Open Source project to support relief support activities conducted by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
     
     <!-- Loading Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,700" rel="stylesheet">
+ 
     <!-- Loading Flat UI -->
     <link href="/public/css/flat-ui.min.css" rel="stylesheet">
 
@@ -31,7 +31,7 @@
     * {
         font-family: 'Abhaya Libre', serif;
     }
-    
+
     body {
         padding-top: 95px;
     }
@@ -42,6 +42,14 @@
 
     footer {
         margin-top: 80px;
+    }
+
+    .share-buttons img {
+        width: 35px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
     }
 </style>
 
@@ -60,7 +68,8 @@
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL</a></li>
+                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">Online Donations </a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -81,7 +90,9 @@
             <div class="col-md-5 col-xs-12">
                 <div class="footer-banner">
                     <h3 class="footer-title">Disclamier</h3>
-                    <p>මෙහි ඇති එක් එක් තොරතුරු ඒ ඒ පුද්ගලයන් විසින් වෙබ් අඩවියට ඇතුලත් කර ඇති අතර ඒවයේ නිරවද්‍යතාවය සම්බණ්දයෙන්  සොයාබලා කටයුතු කරන ලෙස කාරුණිකව ඉල්ලා සිටිමි.</p>
+                    <p>මෙහි ඇති එක් එක් තොරතුරු ඒ ඒ පුද්ගලයන් විසින් වෙබ් අඩවියට ඇතුලත් කර ඇති අතර ඒවයේ නිරවද්‍යතාවය සම්බණ්දයෙන්  සොයාබලා කටයුතු කරන ලෙස කාරුණිකව ඉල්ලා සිටිමු.</p>
+                    <p>මමෙමෙ වෙබ් සේවාව ස්වේච්ඡා සේවාවක් සහ ව්‍යපෘතියකි. තවත් තොරතුරු සහ වැඩි දියුණු කිරීම සඳහා උදවු කිරීමට 
+<a href="https://github.com/reliefsupports/reliefsupports.org"> Github පිටුවට</a></p>
                 </div>
             </div>
         </div>
@@ -89,7 +100,9 @@
 </footer>
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+
 <script src="/public/js/vendor/jquery.min.js"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/public/js/vendor/video.js"></script>
 <script src="/public/js/flat-ui.min.js"></script>
