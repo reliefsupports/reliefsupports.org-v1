@@ -1,5 +1,7 @@
 # Relief Supports Project
 
+[![Gitter chat](https://badges.gitter.im/gitterHQ/services.png)](https://gitter.im/relief-supports/Lobby)
+
 This is a community-driven Open Source project to support relief support activities conducted by volunteers.
 This project was originally created to support flood relief activities in Sri Lanka in May 2017.
 
