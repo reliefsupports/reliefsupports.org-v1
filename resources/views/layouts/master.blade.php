@@ -11,7 +11,7 @@
     <meta property="og:site_name" content="Relief Supports Sri Lanka"/>
     <meta property="og:description" content=" අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවන වෙබ් සේවාවක්. ඔබේ අවශ්‍යතා සහ ආධාර දැන්ම එක් කරන්න. Post your relief support activities and connect with people who need it the most. This is a community driven Open Source project to support relief support activities conducted by volunteers. This project was originally created to support flood relief activities in Sri Lanka in May 2017."/>
     
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="/public/css/app.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->

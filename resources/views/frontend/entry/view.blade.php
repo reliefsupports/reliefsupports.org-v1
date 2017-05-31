@@ -75,7 +75,8 @@
         (function() {
             var d = document, s = d.createElement('script');
 
-            s.src = '//{{ env('DISQUS_KEY') }}.disqus.com/embed.js';
+            // s.src = '//{{ env('DISQUS_KEY') }}.disqus.com/embed.js';
+            s.src = 'https://reliefsupports-org.disqus.com/embed.js';
 
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
