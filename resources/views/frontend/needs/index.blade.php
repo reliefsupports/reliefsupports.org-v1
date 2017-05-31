@@ -10,9 +10,9 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
+                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
                 </p>
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -24,20 +24,19 @@
                         <th>පිරිස</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($needs as $need)
                         <tr>
                             <th scope="row">{{ $need->id }}</th>
-                            <td>{{ $need->name }}</td>
-                            <td>{{ str_limit($need->needs, 150) }}</td>
-                            <td>{{ str_limit($need->address, 200) }}</td>
-                            <td>{{ $need->city }}</td>
-                            <td>{{ $need->telephone }}</td>
-                            <td>{{ $need->heads }}</td>
-                            <td>{{ $need->created_at }}</td>
+                            <td data-xs-label="නම">{{ $need->name }}</td>
+                            <td data-xs-label="අවශ්‍යතා">{{ str_limit($need->needs, 150) }}</td>
+                            <td data-xs-label="ලිපිනය">{{ str_limit($need->address, 200) }}</td>
+                            <td data-xs-label="නගරය">{{ $need->city }}</td>
+                            <td data-xs-label="දුරකථන">{{ $need->telephone }}</td>
+                            <td data-xs-label="පිරිස">{{ $need->heads }}</td>
+                            <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
                             <!-- <td>
                                 <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button>
                             </td> -->
@@ -49,8 +48,6 @@
                                 >
                                     <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                                 </button>
-                            </td>
-                            <td>
                                 <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
                                     <button type="button" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
