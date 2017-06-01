@@ -42,25 +42,26 @@
                         <th>පිරිස</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     @if(count($needs) > 0)
                         @foreach($needs as $need)
                             <tr>
+
                                 <th scope="row">{{ $need->ref }}</th>
                                 <td>{{ $need->name }}</td>
                                 <td>{{ str_limit($need->needs, 150) }}</td>
                                 <td>{{ str_limit($need->address, 200) }}</td>
                                 <td>{{ $need->city }}</td>
                                 <td>{{ $need->telephone }}</td>
+
                                 @if($need->heads && $need->heads > 0)
-                                <td>{{ $need->heads }}</td>
+                                <td data-xs-label="පිරිස">{{ $need->heads }}</td>
                                 @else
-                                <td>N/A</td>
+                                <td data-xs-label="පිරිස">Not provided</td>
                                 @endif
-                                <td>{{ $need->created_at }}</td>
+                                <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
                                 <td>
                                     <button
                                         type="button"
@@ -72,7 +73,7 @@
                                     <!-- <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button> -->
                                 </td>
                                 <td>
-                                    <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
+                                    <a target="_blank" href="/entry/need/{{$need->id}}">
                                         <button type="button" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                                         </button>
@@ -104,7 +105,6 @@
                         <th>දුරකථන</th>
                         <th>ඇතුල්කලේ</th>
                         <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -116,7 +116,7 @@
                             <td>{{ str_limit($donation->address, 150) }}</td>
                             <td>{{ $donation->city }}</td>
                             <td>{{ $donation->telephone }}</td>
-                            <td>{{ $donation->created_at }}</td>
+                            <td>{{ $donation->created_at }}</td>                            
                             <td>
                                 <button
                                     type="button"
@@ -127,7 +127,7 @@
                                 </button>
                             </td>
                             <td>
-                                <a target="_blank" href="http://reliefsupports.org/entry/donation/{{$donation->id}}">
+                                <a target="_blank" href="/entry/donation/{{$donation->id}}">
                                     <button type="button" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                                     </button>

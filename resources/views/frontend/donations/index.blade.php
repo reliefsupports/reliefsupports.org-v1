@@ -10,9 +10,9 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg">මෙතනින් ආධාර එකතු කරන්න</button></a>
+                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">මෙතනින් ආධාර එකතු කරන්න</button></a>
                 </p>
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -35,6 +35,7 @@
                         <td>{{ $donation->city }}</td>
                         <td>{{ $donation->telephone }}</td>
                         <td>{{ $donation->created_at }}</td>
+                        
                         <!-- <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td> -->
                         <td>
                             <button
@@ -46,7 +47,7 @@
                             </button>
                         </td>
                         <td>
-                            <a target="_blank" href="http://reliefsupports.org/entry/donation/{{$donation->id}}">
+                            <a target="_blank" href="/entry/donation/{{$donation->id}}">
                                 <button type="button" class="btn btn-primary">
                                     <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                                 </button>
