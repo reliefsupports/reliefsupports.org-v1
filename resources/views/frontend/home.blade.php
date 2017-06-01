@@ -6,14 +6,26 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="well hero">
-            <h3>ආයුබෝවන්!!!</h3>
-            <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
-                මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
-            <p>
+            @if(!$greeting)
+                <div>
+                    <h3>ආයුබෝවන්!!!</h3>
+                    <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
+                        මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+                    <p>
+                    <form class="form-horizontal" role="form" method="POST" action="/">
+                        {{ csrf_field() }}
+                        {{ $greeting }}
+                        <input type="hidden" name="hideGreeting" value="hideGreeting">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            @endif
                 <a class="btn btn-lg btn-primary" href="/donations/add" role="button">ආධාර එකතු කරන්න &raquo;</a>
                 <a class="btn btn-lg btn-primary" href="/needs/add" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
             </p>
         </div>
+
+
 
         <div class="row">
             <div class="col-md-12">
