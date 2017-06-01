@@ -71,14 +71,14 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/needs/" role="button">සියලුම  අවශ්‍යතා මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="/needs/" role="button">{{ __('home.all_needs') }}</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
 
         <div class="row">
             <div class="col-md-12">
-                <h4>නවතම ආධාර </h4>
+                <h4>{{ __('home.latest_needs') }}</h4>
                 <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
@@ -124,7 +124,7 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/donations/" role="button">සියලුම  ආධාර මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="/donations/" role="button">{{ __('home.all_donations') }}</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
