@@ -16,7 +16,7 @@
                         {{ csrf_field() }}
                         {{ $greeting }}
                         <input type="hidden" name="hideGreeting" value="hideGreeting">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class=" btn btn-link" title="Dismiss Message"><i class="glyphicon glyphicon-remove text-muted"></i></button>
                     </form>
                 </div>
             @endif

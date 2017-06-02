@@ -28,6 +28,7 @@ footer {
 
 //custom
 .hero {
+	position: relative;
 	h3 {
 		margin-top: 0;
 	}
@@ -35,6 +36,11 @@ footer {
 		&:last-child {
 			margin-bottom: 0;
 		}
+	}
+	form {
+		position: absolute;
+	    right: 15px;
+	    top: 15px;
 	}
 	@media (max-width: 480px) {
 		.btn {
