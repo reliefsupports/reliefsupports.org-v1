@@ -32,4 +32,12 @@ interface DonationInterface
      * @return mixed
      */
     public function findDonation($id);
-}
+
+    /**
+     * Update donation
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function updateDonation($id, $input);
+}   
