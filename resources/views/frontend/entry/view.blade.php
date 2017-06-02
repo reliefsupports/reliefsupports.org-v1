@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="container main-container">
-    
+
     <div class="row">
       <div class="col-md-12">
 
@@ -18,9 +18,16 @@
               <tr> <td>ලිපිනය</td> <td>{{$data['entry']->address}}</td> </tr>
               <tr> <td>නගරය</td> <td>{{$data['entry']->city}}</td> </tr>
               <tr> <td>දුරකථන අංක</td> <td>{{$data['entry']->telephone}}</td> </tr>
-              <tr> <td>පිරිස</td> <td>{{$data['entry']->heads}}</td> </tr>
+              <tr>
+                <td>පිරිස</td> 
+                @if($data['entry']->heads && $data['entry']->heads > 0)
+                  <td>{{$data['entry']->heads}}</td>
+                @else
+                  <td>Not provided</td>
+                @endif
+              </tr>
               <tr> <td>ඇතුල්කලේ</td> <td>{{$data['entry']->created_at}}</td> </tr>
-              <tr> <td>යාවත්කාලීන කෙල්</td> <td>{{$data['entry']->updated_at}}</td> </tr>
+              <tr> <td>යාවත්කාලීන කලේ</td> <td>{{$data['entry']->updated_at}}</td> </tr>
             </tbody>
           </table>
         </div>
@@ -37,7 +44,7 @@
               <tr> <td>දුරකථන අංක</td> <td>{{$data['entry']->telephone}}</td> </tr>
               <tr> <td>අමතර විස්තර</td> <td>{{$data['entry']->information}}</td> </tr>
               <tr> <td>ඇතුල්කලේ</td> <td>{{$data['entry']->created_at}}</td> </tr>
-              <tr> <td>යාවත්කාලීන කෙල්</td> <td>{{$data['entry']->updated_at}}</td> </tr>
+              <tr> <td>යාවත්කාලීන කලේ</td> <td>{{$data['entry']->updated_at}}</td> </tr>
             </tbody>
           </table>
         </div>
@@ -63,13 +70,33 @@
       </div>
     </div>
 
+    <div id="disqus_thread"></div>
+    <script>
+
+
+        var disqus_config = function () {
+            this.page.url = '{{ url("/entry/".$data['type']."/".$data['id']) }}';
+            this.page.identifier = '{{ md5("need".$data['type'].$data['id']) }}';
+        };
+
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = 'https://{{ env('DISQUS_KEY') }}.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     <script type="text/javascript">
       function share(elm) {
         window.open(
-          elm.href, 
+          elm.href,
           'winname',
           'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=700,height=350');
-        return false; 
+        return false;
       }
     </script>
   </div><!-- /.container -->

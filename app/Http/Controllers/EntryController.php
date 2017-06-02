@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\NeedsController;
 use App\Http\Controllers\DonationController;
 
+
+use Illuminate\Support\Facades\View;
+
 class EntryController extends Controller
 {
     private $need;
@@ -33,6 +36,9 @@ class EntryController extends Controller
         $this->donation = $donationRepository;
         $this->d = $donationController;
         $this->n = $needsController;
+
+        // TODO: move to a view composer next time someone needs to use APP_URL
+        View::share('base_url', env('APP_URL'));
     }
 
     /**
@@ -56,8 +62,8 @@ class EntryController extends Controller
                 'data' => [
                     'id' => $id,
                     'type' => $type,
-                    'entry' => $entry
+                    'entry' => $entry,
                 ]
-            ]);;
+            ]);
     }
 }
