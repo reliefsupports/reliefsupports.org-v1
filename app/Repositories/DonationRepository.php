@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Log;
  */
 class DonationRepository implements DonationInterface
 {
+    const DONATION_ID_PREFIX = "O";
+
     /**
      * Add donations
      *
@@ -22,8 +24,14 @@ class DonationRepository implements DonationInterface
     public function addDonation($input)
     {
         try {
-            Donation::create($input);
+            $donation =  Donation::create($input);
+
+            //Update Reference column
+            $donation->ref =  self::DONATION_ID_PREFIX.$donation->id;
+            $donation->save();
+
             return true;
+
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;
@@ -64,4 +72,15 @@ class DonationRepository implements DonationInterface
             return false;
         }
     }
+
+    public function cha($id)
+    {
+        try {
+            return Donation::find($id);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
+
 }

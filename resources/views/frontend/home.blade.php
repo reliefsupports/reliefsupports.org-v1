@@ -6,14 +6,26 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="well hero">
-            <h3>ආයුබෝවන්!!!</h3>
-            <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
-                මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
-            <p>
+            @if(!$greeting)
+                <div>
+                    <h3>ආයුබෝවන්!!!</h3>
+                    <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
+                        මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+                    <p>
+                    <form class="form-horizontal" role="form" method="POST" action="/">
+                        {{ csrf_field() }}
+                        {{ $greeting }}
+                        <input type="hidden" name="hideGreeting" value="hideGreeting">
+                        <button type="submit" class=" btn btn-link" title="Dismiss Message"><i class="glyphicon glyphicon-remove text-muted"></i></button>
+                    </form>
+                </div>
+            @endif
                 <a class="btn btn-lg btn-primary" href="/donations/add" role="button">ආධාර එකතු කරන්න &raquo;</a>
                 <a class="btn btn-lg btn-primary" href="/needs/add" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
             </p>
         </div>
+
+
 
         <div class="row">
             <div class="col-md-12">
@@ -36,12 +48,14 @@
                     @if(count($needs) > 0)
                         @foreach($needs as $need)
                             <tr>
-                                <th scope="row">{{ $need->id }}</th>
-                                <td data-xs-label="නම">{{ $need->name }}</td>
-                                <td data-xs-label="අවශ්‍යතා">{{ str_limit($need->needs, 150) }}</td>
-                                <td data-xs-label="ලිපිනය">{{ str_limit($need->address, 200) }}</td>
-                                <td data-xs-label="නගරය">{{ $need->city }}</td>
-                                <td data-xs-label="දුරකථන">{{ $need->telephone }}</td>
+
+                                <th scope="row">{{ $need->ref }}</th>
+                                <td>{{ $need->name }}</td>
+                                <td>{{ str_limit($need->needs, 150) }}</td>
+                                <td>{{ str_limit($need->address, 200) }}</td>
+                                <td>{{ $need->city }}</td>
+                                <td>{{ $need->telephone }}</td>
+
                                 @if($need->heads && $need->heads > 0)
                                 <td data-xs-label="පිරිස">{{ $need->heads }}</td>
                                 @else
@@ -96,13 +110,13 @@
                     <tbody>
                     @foreach($donations as $donation)
                         <tr>
-                            <th scope="row">{{ $donation->id }}</th>
-                            <td data-xs-label="නම">{{ $donation->name }}</td>
-                            <td data-xs-label="ආධාරය">{{ str_limit($donation->donation, 150) }}</td>
-                            <td data-xs-label="ලිපිනය">{{ str_limit($donation->address, 150) }}</td>
-                            <td data-xs-label="නගරය">{{ $donation->city }}</td>
-                            <td data-xs-label="දුරකථන">{{ $donation->telephone }}</td>
-                            <td data-xs-label="ඇතුල්කලේ">{{ $donation->created_at }}</td>
+                            <th scope="row">{{ $donation->ref }}</th>
+                            <td>{{ $donation->name }}</td>
+                            <td>{{ str_limit($donation->donation, 150) }}</td>
+                            <td>{{ str_limit($donation->address, 150) }}</td>
+                            <td>{{ $donation->city }}</td>
+                            <td>{{ $donation->telephone }}</td>
+                            <td>{{ $donation->created_at }}</td>                            
                             <td>
                                 <button
                                     type="button"

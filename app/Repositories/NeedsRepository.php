@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Log;
 
 class NeedsRepository implements NeedsInterface
 {
+    const NEED_ID_PREFIX = "R";
+
     /**
      * Add needs
      *
@@ -23,8 +25,15 @@ class NeedsRepository implements NeedsInterface
     public function addNeed($input)
     {
         try {
-            Need::create($input);
+
+            $need = Need::create($input);
+
+            //Update Reference column
+            $need->ref =  self::NEED_ID_PREFIX.$need->id;
+            $need->save();
+
             return true;
+
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;

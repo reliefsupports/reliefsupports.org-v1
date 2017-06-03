@@ -28,13 +28,14 @@
                     <tbody>
                     @foreach($donations as $donation)
                     <tr>
-                        <th scope="row">{{ $donation->id }}</th>
-                        <td data-xs-label="නම">{{ $donation->name }}</td>
-                        <td data-xs-label="ආධාරය">{{ str_limit($donation->donation, 150) }}</td>
-                        <td data-xs-label="ලිපිනය">{{ str_limit($donation->address, 150) }}</td>
-                        <td data-xs-label="නගරය">{{ $donation->city }}</td>
-                        <td data-xs-label="දුරකථන">{{ $donation->telephone }}</td>
-                        <td data-xs-label="ඇතුල්කලේ">{{ $donation->created_at }}</td>
+                        <th scope="row">{{ $donation->ref }}</th>
+                        <td>{{ $donation->name }}</td>
+                        <td>{{ str_limit($donation->donation, 150) }}</td>
+                        <td>{{ str_limit($donation->address, 150) }}</td>
+                        <td>{{ $donation->city }}</td>
+                        <td>{{ $donation->telephone }}</td>
+                        <td>{{ $donation->created_at }}</td>
+                        
                         <!-- <td><button type="button" class="btn btn-primary read-donation" data-id="{{ $donation->id }}">Read full</button></td> -->
                         <td>
                             <button

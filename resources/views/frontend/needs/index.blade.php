@@ -29,7 +29,7 @@
                     <tbody>
                     @foreach($needs as $need)
                         <tr>
-                            <th scope="row">{{ $need->id }}</th>
+                            <th scope="row">{{ $need->ref }}</th>
                             <td data-xs-label="නම">{{ $need->name }}</td>
                             <td data-xs-label="අවශ්‍යතා">{{ str_limit($need->needs, 150) }}</td>
                             <td data-xs-label="ලිපිනය">{{ str_limit($need->address, 200) }}</td>
