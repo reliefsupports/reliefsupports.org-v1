@@ -41,19 +41,20 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">{{ __('home.home') }}</a></li>
-                <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">{{ __('home.donate') }}</a></li>
-                <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">{{ __('home.needs') }}</a></li>
-                <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('home.important_tels') }}</a></li>
-                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">{{ __('home.online_donations') }}</a></li>
-                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
+                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">{{ __('layout.menu.home') }}</a></li>
+                <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">{{ __('layout.menu.aid') }}</a></li>
+                <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">{{ __('layout.menu.requests') }}</a></li>
+                <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('layout.menu.tel') }}</a></li>
+                <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">{{ __('layout.menu.online-donations') }}</a></li>
+                <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">{{__('layout.menu.twitter-feed')}}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ (App::isLocale('si') ? 'සිංහල' : 'தமிழ்') }} <span class="caret"></span></a>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ (App::isLocale('si') ? 'සිංහල' : 'English') }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @if(App::isLocale('si'))
-                        <li><a href="/locale/ta">தமிழ்</a></li>
+                        <!-- <li><a href="/locale/ta">தமிழ்</a></li> -->
+                        <li><a href="/locale/en">English</a></li>
                         @else
                         <li><a href="/locale/si">සිංහල</a></li>
                         @endif
