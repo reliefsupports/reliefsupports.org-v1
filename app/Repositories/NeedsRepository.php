@@ -11,6 +11,7 @@ namespace App\Repositories;
 use App\Need;
 use App\Repositories\Contracts\NeedsInterface;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class NeedsRepository implements NeedsInterface
 {
@@ -64,5 +65,29 @@ class NeedsRepository implements NeedsInterface
             Log::error($e->getMessage());
             return false;
         }
+    }
+    
+    /**
+     * 
+     * @param type $search
+     * @return boolean
+     */
+    public function searchNeeds($search){
+        
+        $searchParts = explode(" ", str_replace(",", " ", $search));
+        
+        try {
+           $query = Need::query();
+           if(strlen($search)>0){
+                foreach($searchParts as $searchPart){
+                    $query = $query->where(DB::Raw('CONCAT_WS(" ",name,telephone,address,city,needs)'),"like","%$searchPart%");
+                }
+           }
+           return $query->get();
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+        
     }
 }
