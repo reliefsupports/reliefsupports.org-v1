@@ -34,3 +34,4 @@ Route::get('/locale/{locale}', function($locale){
      session(['locale' => $locale]);
      return redirect('/');
 });
+Route::post('/search-donations-needs', 'HomeController@searchDonationsOrNeeds');

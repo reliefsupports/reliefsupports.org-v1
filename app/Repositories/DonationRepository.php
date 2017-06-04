@@ -4,6 +4,7 @@ namespace App\Repositories;
 use App\Donation;
 use App\Repositories\Contracts\DonationInterface;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Created by PhpStorm.
@@ -59,6 +60,28 @@ class DonationRepository implements DonationInterface
     {
         try {
             return Donation::find($id);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
+    
+    /**
+     * @param type $search
+     * @return array
+     */
+    public function searchDonations($search){
+
+        $searchParts = explode(" ", str_replace(",", " ", $search));
+      
+        try {
+           $query = Donation::query();
+           if(strlen($search)>0){
+                foreach($searchParts as $searchPart){
+                     $query = $query->where(DB::Raw('CONCAT_WS(" ",name,telephone,address,city,donation,information) '),"like","%$searchPart%");
+                }
+           }
+           return $query->get();
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;

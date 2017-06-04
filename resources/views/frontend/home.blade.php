@@ -6,28 +6,38 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="well hero">
-            <h3>{{ __('home.title') }}</h3>
-            <p>{{ __('home.text_block') }}</p>
+            <h3>{{ __('layout.greet') }}</h3>
+            {!!__('layout.intro')!!}
             <p>
-                <a class="btn btn-lg btn-primary" href="/donations/add" role="button">{{ __('home.collect_donations') }}</a>
-                <a class="btn btn-lg btn-primary" href="/needs/add" role="button">{{ __('home.collect_needs') }}</a>
+                <a class="btn btn-lg btn-primary" href="{{ url("/donations/add")}}" role="button">{{ __('layout.button.add-aid') }}</a>
+                <a class="btn btn-lg btn-primary" href="{{ url("/needs/add") }}" role="button">{{ __('layout.button.add-request') }}</a>
             </p>
         </div>
+        <div class="well hero">
+            {!! Form::open(['url' => 'search-donations-needs','id'=>'reports']) !!}  
+           <!-- Example single danger button -->
 
+             <div class="row">
+                <div class="col-sm-2">{!! Form::select('type', array('all'=>'සියලු', 'donations' => 'ආධාර', 'needs' => 'අවශ්‍යතා'), '1', array("class"=>"btn btn-lg btn-primary selectpicker")) !!}</div>
+                <div class="col-sm-8"><input name="search" type="text"  class="form-control" placeholder="{{ __('layout.search-placeholder')}}" value="{{ Input::old('search')}}"></div>
+                <div class="col-sm-2"><button  class="btn btn-lg btn-primary" type="submit" type="button">{{ __('layout.button.search') }}</button></div>
+             </div> 
+            {!! Form::close() !!}
+        </div>
         <div class="row">
             <div class="col-md-12">
-                <h4>{{ __('home.latest_needs') }}</h4>
+                <h4>{{ __('layout.latest_needs') }}</h4>
                 <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ __('home.table.name') }}</th>
-                        <th>{{ __('home.table.needs') }}</th>
-                        <th>{{ __('home.table.address') }}</th>
-                        <th>{{ __('home.table.city') }}</th>
-                        <th>{{ __('home.table.tel') }}</th>
-                        <th>{{ __('home.table.ppl') }}</th>
-                        <th>{{ __('home.table.entered_by') }}</th>
+                        <th>{{ __('layout.table.name') }}</th>
+                        <th>{{ __('layout.table.needs') }}</th>
+                        <th>{{ __('layout.table.address') }}</th>
+                        <th>{{ __('layout.table.city') }}</th>
+                        <th>{{ __('layout.table.tel') }}</th>
+                        <th>{{ __('layout.table.ppl') }}</th>
+                        <th>{{ __('layout.table.entered_by') }}</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -71,24 +81,24 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/needs/" role="button">{{ __('home.all_needs') }}</a>
+                    <a class="btn btn-lg btn-primary" href="{{ url("/needs/") }}" role="button">{{ __('layout.all_needs') }}</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
 
         <div class="row">
             <div class="col-md-12">
-                <h4>{{ __('home.latest_needs') }}</h4>
+                <h4>{{ __('layout.latest_needs') }}</h4>
                 <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ __('home.table.name') }}</th>
-                        <th>{{ __('home.table.donation') }}</th>
-                        <th>{{ __('home.table.address') }}</th>
-                        <th>{{ __('home.table.city') }}</th>
-                        <th>{{ __('home.table.tel') }}</th>
-                        <th>{{ __('home.table.entered_by') }}</th>
+                        <th>{{ __('layout.table.name') }}</th>
+                        <th>{{ __('layout.table.donation') }}</th>
+                        <th>{{ __('layout.table.address') }}</th>
+                        <th>{{ __('layout.table.city') }}</th>
+                        <th>{{ __('layout.table.tel') }}</th>
+                        <th>{{ __('layout.table.entered_by') }}</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -124,7 +134,7 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/donations/" role="button">{{ __('home.all_donations') }}</a>
+                    <a class="btn btn-lg btn-primary" href="{{ url("donations") }}" role="button">{{ __('layout.all_donations') }}</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
@@ -140,19 +150,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>{{ __('home.table.name') }}</dt>
+                        <dt>{{ __('layout.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>{{ __('home.table.needs') }}</dt>
+                        <dt>{{ __('layout.table.needs') }}</dt>
                         <dd id="needs"></dd>
-                        <dt>{{ __('home.table.address') }}</dt>
+                        <dt>{{ __('layout.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>{{ __('home.table.city') }}</dt>
+                        <dt>{{ __('layout.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>{{ __('home.table.tels') }}</dt>
+                        <dt>{{ __('layout.table.tels') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>{{ __('home.table.ppl') }}</dt>
+                        <dt>{{ __('layout.table.ppl') }}</dt>
                         <dd id="heads"></dd>
-                        <dt>{{ __('home.table.entered_by') }}</dt>
+                        <dt>{{ __('layout.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>
@@ -172,19 +182,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>{{ __('home.table.name') }}</dt>
+                        <dt>{{ __('layout.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>{{ __('home.table.donation') }}</dt>
+                        <dt>{{ __('layout.table.donation') }}</dt>
                         <dd id="donation"></dd>
-                        <dt>{{ __('home.table.address') }}</dt>
+                        <dt>{{ __('layout.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>{{ __('home.table.city') }}</dt>
+                        <dt>{{ __('layout.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>{{ __('home.table.tels') }}</dt>
+                        <dt>{{ __('layout.table.tels') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>{{ __('home.table.extra_info') }}</dt>
+                        <dt>{{ __('layout.table.extra_info') }}</dt>
                         <dd id="information"></dd>
-                        <dt>{{ __('home.table.entered_by') }}</dt>
+                        <dt>{{ __('layout.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>

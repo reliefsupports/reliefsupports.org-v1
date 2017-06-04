@@ -14,7 +14,7 @@
         @endif
             <div class="col-md-12">
                 <h4>{{ __('home.collect_donations') }}</h4>
-                <form class="form-horizontal" role="form" method="POST" action="/donations/add">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url("/donations/add") }}">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="col-lg-2 control-label">{{ __('home.your_name') }}</label>
