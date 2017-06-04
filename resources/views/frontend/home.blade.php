@@ -10,11 +10,21 @@
             <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
                 මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
             <p>
-                <a class="btn btn-lg btn-primary" href="/donations/add" role="button">ආධාර එකතු කරන්න &raquo;</a>
-                <a class="btn btn-lg btn-primary" href="/needs/add" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="{{ url("/donations/add")}}" role="button">ආධාර එකතු කරන්න &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="{{ url("/needs/add") }}" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
             </p>
         </div>
+        <div class="well hero">
+            {!! Form::open(['url' => 'search-donations-needs','id'=>'reports']) !!}  
+           <!-- Example single danger button -->
 
+             <div class="row">
+                <div class="col-sm-2">{!! Form::select('type', array('all'=>'සියලු', 'donations' => 'ආධාර', 'needs' => 'අවශ්‍යතා'), '1', array("class"=>"btn btn-lg btn-primary selectpicker")) !!}</div>
+                <div class="col-sm-8"><input name="search" type="text"  class="form-control" placeholder="ඔබී සෙවුම මෙහි ඇතුලත් කරන්න." value="{{ Input::old('search')}}"></div>
+                <div class="col-sm-2"><button  class="btn btn-lg btn-primary" type="submit" type="button">සොයන්න</button></div>
+             </div> 
+            {!! Form::close() !!}
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <h4>නවතම අවශ්‍යතා </h4>
@@ -72,7 +82,7 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/needs/" role="button">සියලුම  අවශ්‍යතා මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="{{ url("/needs/") }}" role="button">සියලුම  අවශ්‍යතා මෙතනින්  &raquo;</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
@@ -125,7 +135,7 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="/donations/" role="button">සියලුම  ආධාර මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="{{ url("donations") }}" role="button">සියලුම  ආධාර මෙතනින්  &raquo;</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
