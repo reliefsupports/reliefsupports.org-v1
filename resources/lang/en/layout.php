@@ -12,10 +12,10 @@ return [
     'intro' => '<p>This web platform has been developed to list the requirments of people who were affected by the flooding in Sri Lanka, and to connect them to people willing to offer help. This service is 100% free-of-charge, and our aim is to ease the process of managing relief efforts. We will be adding more features in the coming days.</p>',
     'intro-footer' => '<p>This web platform has been developed to support relief activities by bringing donations and requirements of people who were affected by the flooding in Sri Lanka.</p> <p>This service is 100% free-of-charge, and our aim is to ease the process of managing relief efforts. We will be adding more features in the coming days.</p>',
     'disclaimer' => '<p>This web platform consits of information filled by different people and please verify them before you proceed</p> <p>This web platform is a fully community driven volunteer project. For more information and contribution for this project visit 
-<a target="_blank" href="https://github.com/reliefsupports/reliefsupports.org">Github page</a></p>',
+<a target="_blank" href="https://github.com/reliefsupports/reliefsupports.org">Github page.</a></p>',
     'button' => [
-      'add-aid' => 'Add donations &raquo;',
-      'add-request' => 'Add requests &raquo;',
+      'add-aid' => 'Add Donations &raquo;',
+      'add-request' => 'Add Requests &raquo;',
       'search' => 'Search',
       'view-all-requests' => 'View All Requests &raquo;',
       'view-all-aids' => 'View All Donations &raquo;'
