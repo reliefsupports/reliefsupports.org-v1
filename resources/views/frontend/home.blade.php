@@ -55,7 +55,7 @@
                                 @if($need->heads && $need->heads > 0)
                                 <td data-xs-label="පිරිස">{{ $need->heads }}</td>
                                 @else
-                                <td data-xs-label="පිරිස">N/A</td>
+                                <td data-xs-label="පිරිස">Not provided</td>
                                 @endif
                                 <td data-xs-label="ඇතුල්කලේ">{{ $need->created_at }}</td>
                                 <td>
@@ -69,7 +69,7 @@
                                     <!-- <button type="button" class="btn btn-primary read-needs" data-id="{{ $need->id }}">Read full</button> -->
                                 </td>
                                 <td>
-                                    <a target="_blank" href="http://reliefsupports.org/entry/need/{{$need->id}}">
+                                    <a target="_blank" href="/entry/need/{{$need->id}}">
                                         <button type="button" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                                         </button>
@@ -123,7 +123,7 @@
                                 </button>
                             </td>
                             <td>
-                                <a target="_blank" href="http://reliefsupports.org/entry/donation/{{$donation->id}}">
+                                <a target="_blank" href="/entry/donation/{{$donation->id}}">
                                     <button type="button" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                                     </button>

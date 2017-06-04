@@ -23,7 +23,7 @@ Even you can check the [wiki](https://github.com/reliefsupports/reliefsupports.o
 
 ### Setting up the development environment
 
-Generally speaking, you should fork this repository, make changes in your own fork, and then submit a pull-request. Please include necessary information with pull-request 
+Generally speaking, you should fork this repository, make changes in your own fork, and then submit a pull-request. Please include necessary information with pull-request
 
 Before send the pull-request, please make sure nothing has broken in the app with the new changes you made.
 
@@ -57,17 +57,7 @@ chmod 777 bootstrap/cache
 ##### Docker
 
 * You need to install [Docker](https://www.docker.com/) on your computer first.
-* If Docker is running on your computer without any errors, run following commands accordingly.
-
-```
-docker-compose build
-docker-compose up -d
-docker exec -it reliefsupportsorg_php_1 bash // this may change as you configurations
-composer install
-
-chmod -R 777 storage/
-chmod 777 bootstrap/cache
-```
+* If Docker is running on your computer without any errors, follow the [Docker Testing Guide](docker/README.md).
 
 ## License
 
