@@ -25,5 +25,4 @@ ssh -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
 cd /var/www/public
 rm -rf vendor
 composer install
-pwd
 EOF
