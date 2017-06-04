@@ -20,7 +20,7 @@
 
              <div class="row">
                 <div class="col-sm-2">{!! Form::select('type', array('all'=>'සියලු', 'donations' => 'ආධාර', 'needs' => 'අවශ්‍යතා'), '1', array("class"=>"btn btn-lg btn-primary selectpicker")) !!}</div>
-                <div class="col-sm-8"><input name="search" type="text"  class="form-control" placeholder="ඔබී සෙවුම මෙහි ඇතුලත් කරන්න." value="{{ Input::old('search')}}"></div>
+                <div class="col-sm-8"><input name="search" type="text"  class="form-control" placeholder="ඔබේ සෙවුම මෙහි ඇතුලත් කරන්න." value="{{ Input::old('search')}}"></div>
                 <div class="col-sm-2"><button  class="btn btn-lg btn-primary" type="submit" type="button">සොයන්න</button></div>
              </div> 
             {!! Form::close() !!}
