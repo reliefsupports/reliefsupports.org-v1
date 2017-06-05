@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
-                            <button type="submit" class="btn btn-primary">{{ __('layout.search-placeholder.save_form') }} </button>
+                            <button type="submit" class="btn btn-primary">{{ __('home.save_form')}} </button>
                         </div>
                     </div>
                 </form>
