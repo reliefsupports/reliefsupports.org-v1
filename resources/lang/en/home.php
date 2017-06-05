@@ -6,7 +6,7 @@ return [
     'collect_donations' => 'Add Donations &raquo;',
     'collect_needs' => 'Add Requests &raquo;',
     'latest_needs' => 'Add Requests',
-    'your_name' => 'ඔබගේ නම',
+    'your_name' => 'Your Name',
     'table' => [
         'name' => 'Name',
         'needs' => '‍Requirements',
@@ -18,7 +18,7 @@ return [
         'entered_by' => 'Entered By',
         'donation' => 'Donation',
         'extra_info' => 'Additional Information',
-        'updated_at' => 'යාවත්කාලීන කෙල්'
+        'updated_at' => 'Updated At'
     ],
     'footer_line_1' => 'This web platform has been developed to support relief activities by bringing donations and requirements of people who were affected by the flooding in Sri Lanka.',
     'footer_line_2' => 'This service is 100% free-of-charge, and our aim is to ease the process of managing relief efforts. We will be adding more features in the coming days',
@@ -30,13 +30,13 @@ return [
     'important_tels' => 'Important Numbers',
     'needs' => 'Requirements',
     'online_donations' => 'Online Donations',
-    'all_donations' => 'සියලුම  ආධාර මෙතනින්',
-    'all_needs' => 'සියලුම  අවශ්‍යතා මෙතනින්',
-    'contactable_numbers' => 'සම්බන්ධ කර ගත හැකි දුරකථන අංක',
-    'your_address' => 'ඔබගේ ලිපිනය',
-    'closest_city' => 'ආසන්නම නගරය/ප්‍රා.ලේ කොට්ටාසය',
-    'aid_desc' => 'ඔබට ලබාදිය හැකි ආධාර ගැන විස්තරයක්',
-    'extra_info_if_any' => 'අමතර විස්තර (ඇත්නම් පමණක් )',
-    'save_form' => 'එක් කරන්න'
+    'all_donations' => 'See All Aid',
+    'all_needs' => 'See All Requests',
+    'contactable_numbers' => 'Contactable Phone Number',
+    'your_address' => 'Your Address',
+    'closest_city' => 'Nearest Town/DS Division',
+    'aid_desc' => 'A Description of the Aid You Can Offer',
+    'extra_info_if_any' => 'Additional Information (If any)',
+    'save_form' => 'Submit'
 
 ];
