@@ -10,7 +10,7 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">{{ __('layout.table.collect_donations') }}</button></a>
+                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">{{ __('layout.button.add-aid') }}</button></a>
                 </p>
                 <table class="table table-responsive" id="donations-table">
                     <thead>
