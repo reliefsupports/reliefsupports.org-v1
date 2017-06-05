@@ -30,7 +30,7 @@ return [
         'tel' => 'Telephone',
         'tels' => 'Telephone Numbers',
         'ppl' => 'People',
-        'entered_by' => 'Added by',
+        'entered_by' => 'Entered By',
         'donation' => 'Donation',
         'extra_info' => 'Additional Information'
     ],
