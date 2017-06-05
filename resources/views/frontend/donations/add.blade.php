@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="information" class="col-lg-2 control-label">{{ __('extra_info_if_any')}}</label>
+                        <label for="information" class="col-lg-2 control-label">{{ __('home.extra_info_if_any')}}</label>
                         <div class="col-lg-10">
                             <textarea class="form-control" rows="4" id="information" name="information" placeholder="">{{ old('information') }}</textarea>
                         </div>

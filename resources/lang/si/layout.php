@@ -32,7 +32,7 @@ return [
         'ppl' => 'පිරිස',
         'entered_by' => 'ඇතුල්කලේ',
         'donation' => 'ආධාරය',
-        'extra_info' => 'අමතර විස්තර'
+        'extra_info' => 'අමතර විස්තර',
     ],
     'search-placeholder' => 'ඔබේ සෙවුම මෙහි ඇතුලත් කරන්න.',
     'all' => '',
