@@ -49,7 +49,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h3>ස්වදේශ කටයුතු අමාත්‍යාංශය</h3>
+                <h3>Ministry of Home Affairs</h3>
                 <h4>Contact Numbers of District Secretary</h4>
                 <p>Ratnapura : <a href="tel:0452222235">045 22 22235</a> / <a href="tel:0714423760">0714423760</a></p>
                 <p>Kalutara : <a href="tel:0342222235">034 22 22235</a>/ <a href="tel:0716814813">0716814813</a></p>
@@ -60,7 +60,7 @@
                 <p>Gampaha : <a href="tel:0332222235">033 22 22235</a>  / <a href="tel:0773273507">0773273507</a></p>
                 <p>Kegalle : <a href="tel:0352222235">035 22 22235</a>  / <a href="tel:0773633293">0773633293</a></p>
 
-                <p>ස්වදේශ කටයුතු අමාත්‍ය Mr. Vajira Abewardana : <a href="tel:0777007070">077 700 7070</a> / <a href="tel:0777518518">077 751 8518</a></p>
+                <p>Minister of Home Affairs, Mr. Vajira Abewardena : <a href="tel:0777007070">077 700 7070</a> / <a href="tel:0777518518">077 751 8518</a></p>
             </div>
         </div>
     </div>
