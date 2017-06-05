@@ -70,7 +70,7 @@ class NeedsRepository implements NeedsInterface
     /**
      * 
      * @param type $search
-     * @return boolean
+     * @return Array
      */
     public function searchNeeds($search){
         
@@ -83,7 +83,7 @@ class NeedsRepository implements NeedsInterface
                     $query = $query->where(DB::Raw('CONCAT_WS(" ",name,telephone,address,city,needs)'),"like","%$searchPart%");
                 }
            }
-           return $query->get();
+           return $query->orderBy('id', 'desc')->paginate(\Config::get('rf_settings.needs_page_pagination'));
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;

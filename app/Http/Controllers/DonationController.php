@@ -6,6 +6,7 @@ use App\Repositories\DonationRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Validator;
+use Illuminate\Support\Facades\Input;
 
 class DonationController extends Controller
 {
@@ -161,5 +162,19 @@ class DonationController extends Controller
         // $request->request->add(['source' => 'api']);
         
         return json_encode($response, JSON_UNESCAPED_UNICODE);
+    }
+    
+    /**
+     * Search Donations
+     * 
+     * @return type
+     */
+    public function search(){
+        
+        $search = Input::get('search');
+        $donations = $this->donation->searchDonations($search);
+        Input::flash();
+        return view('/frontend/donations/index')->with(['donations' => ($donations) ? $donations : array()]);
+        
     }
 }

@@ -4,6 +4,21 @@
     <div class="container main-container">
         <div class="row">
             <div class="col-md-12">
+                <p style="float: right;">
+                    <a href="/needs/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">මෙතනින් අවශ්‍යතා එකතු කරන්න</button></a>
+                </p>
+            </div>
+        </div>
+         <div class="well hero">
+            {!! Form::open(['url' => 'needs/search','id'=>'reports']) !!}  
+                <div class="row">
+                <div class="col-lg-10"><input name="search" type="text"  class="form-control" placeholder="ඔබී සෙවුම මෙහි ඇතුලත් කරන්න." value="{{ Input::old('search')}}"></div>
+                <div class="col-lg-2"><button  class="btn btn-primary btn-hg btn-mobile-block" type="submit" type="button">සොයන්න</button></div>
+             </div> 
+            {!! Form::close() !!}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 @if (session('message'))
                     <div class="alert alert-success">
                         {{ session('message') }}

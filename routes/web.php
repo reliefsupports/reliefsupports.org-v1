@@ -18,11 +18,13 @@ Route::get('/donations/add', 'DonationController@add');
 Route::post('/donations/add', 'DonationController@save');
 Route::get('/donations/show/{id}', 'DonationController@show');
 Route::get('/online-donations', 'DonationController@showOnlineDonations');
+Route::post('/donations/search', 'DonationController@search');
 
 Route::get('/needs', 'NeedsController@index');
 Route::get('/needs/add', 'NeedsController@add');
 Route::post('/needs/add', 'NeedsController@save');
 Route::get('/needs/show/{id}', 'NeedsController@show');
+Route::post('/needs/search', 'NeedsController@search');
 
 Route::get('/emergency-contacts', 'HomeController@emergency');
 Route::get('/twitter-feed', 'FeedsController@index');

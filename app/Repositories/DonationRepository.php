@@ -81,7 +81,7 @@ class DonationRepository implements DonationInterface
                      $query = $query->where(DB::Raw('CONCAT_WS(" ",name,telephone,address,city,donation,information) '),"like","%$searchPart%");
                 }
            }
-           return $query->get();
+           return $query->orderBy('id', 'desc')->paginate(\Config::get('rf_settings.donations_page_pagination'));
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;

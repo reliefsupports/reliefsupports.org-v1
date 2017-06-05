@@ -56,7 +56,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchDonationsOrNeeds(){
-         DB::enableQueryLog();
+
         $search = Input::get('search');
         $searchFor = Input::get('type');
         $donations = array();
