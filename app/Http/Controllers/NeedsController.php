@@ -64,7 +64,8 @@ class NeedsController extends Controller
             'address' => 'required|max:100',
             'city' => 'required|max:50',
             'needs' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha',
+            'geolocation'=> 'max:60'
         ], $messages);
 
         if ($validator->fails()) {

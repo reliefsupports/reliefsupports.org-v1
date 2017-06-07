@@ -1,0 +1,28 @@
+#!/bin/bash
+PUBLIC_KEY_PATH=
+USERNAME=
+ENV=dev
+if [ $ENV = "dev" ]; then
+  HOST=
+else
+  HOST=
+fi
+
+cd ..
+sftp -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
+pwd
+cd /var/www/public
+put *.*
+put -r app
+put -r config
+put -r database
+put -r public
+put -r resources
+put -r routes
+EOF
+
+ssh -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
+cd /var/www/public
+rm -rf vendor
+composer install
+EOF

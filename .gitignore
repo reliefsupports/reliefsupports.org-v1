@@ -12,3 +12,4 @@ npm-debug.log
 .env
 composer.lock
 .DS_Store
+.scripts/deploy.sh
