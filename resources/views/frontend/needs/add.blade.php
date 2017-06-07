@@ -14,7 +14,7 @@
             @endif
             <div class="col-md-12">
                 <h4>අවශ්‍යතා එකතු කරන්න </h4>
-                <form class="form-horizontal" role="form" method="POST" action="/needs/add">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url("/needs/add")}}">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="col-lg-2 control-label">ඔබගේ නම</label>
