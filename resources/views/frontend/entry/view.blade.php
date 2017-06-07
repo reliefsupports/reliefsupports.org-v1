@@ -36,14 +36,14 @@
         <div>
           <table class="table">
             <tbody>
-              <tr> <td>නම</td> <td>{{$data['entry']->name}}</td> </tr>
-              <tr> <td>ආධාරය</td> <td>{{$data['entry']->donation}}</td> </tr>
-              <tr> <td>ලිපිනය</td> <td>{{$data['entry']->address}}</td> </tr>
-              <tr> <td>නගරය</td> <td>{{$data['entry']->city}}</td> </tr>
-              <tr> <td>දුරකථන අංක</td> <td>{{$data['entry']->telephone}}</td> </tr>
-              <tr> <td>අමතර විස්තර</td> <td>{{$data['entry']->information}}</td> </tr>
-              <tr> <td>ඇතුල්කලේ</td> <td>{{$data['entry']->created_at}}</td> </tr>
-              <tr> <td>යාවත්කාලීන කලේ</td> <td>{{$data['entry']->updated_at}}</td> </tr>
+              <tr> <td>{{ __('home.table.name') }}</td> <td>{{$data['entry']->name}}</td> </tr>
+              <tr> <td>{{ __('home.table.donations') }}</td> <td>{{$data['entry']->donation}}</td> </tr>
+              <tr> <td>{{ __('home.table.address') }}</td> <td>{{$data['entry']->address}}</td> </tr>
+              <tr> <td>{{ __('home.table.city') }}</td> <td>{{$data['entry']->city}}</td> </tr>
+              <tr> <td>{{ __('home.table.tels') }}</td> <td>{{$data['entry']->telephone}}</td> </tr>
+              <tr> <td>{{ __('home.table.extra-info') }}</td> <td>{{$data['entry']->information}}</td> </tr>
+              <tr> <td>{{ __('home.table.entered_by') }}</td> <td>{{$data['entry']->created_at}}</td> </tr>
+              <tr> <td>{{ __('home.table.updated_at') }}</td> <td>{{$data['entry']->updated_at}}</td> </tr>
             </tbody>
           </table>
         </div>

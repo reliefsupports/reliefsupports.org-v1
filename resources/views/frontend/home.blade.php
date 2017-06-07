@@ -88,7 +88,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h4>{{ __('layout.latest_needs') }}</h4>
+                <h4>{{ __('layout.latest_donations') }}</h4>
                 <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>

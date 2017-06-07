@@ -41,6 +41,7 @@ return [
     'collect_donations' => 'Add Donations',
     'collect_needs' => 'Add Requests',
     'latest_needs' => 'Latest Requests',
+    'latest_donations' => 'Latest Donations',
     'your_name' => 'Your Name',
     'home' => 'Home',
     'donate' => 'Donations',
