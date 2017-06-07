@@ -25,4 +25,14 @@ ssh -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
 cd /var/www/public
 rm -rf vendor
 composer install
+chmod -R 777 storage/
+chmod 777 bootstrap/cache
+cd storage
+mkdir framework
+cd framework
+mkdir cache
+mkdir sessions
+mkdir views
+cd ..
+cd ..
 EOF
