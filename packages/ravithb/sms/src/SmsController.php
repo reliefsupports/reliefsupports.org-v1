@@ -37,10 +37,7 @@ class SmsController extends Controller
 		
 		$smsService = new $serviceImplClass;
 		$smsService->receive($request->json()->all(), function($message){
-			var_dump($message);
 			$this->smsRepository->addSmsMessage($message);
-			var_dump($message);
-			
 		});
 		http_response_code(200);
 		echo "OK";

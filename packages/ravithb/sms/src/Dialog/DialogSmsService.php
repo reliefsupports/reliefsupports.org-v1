@@ -13,7 +13,7 @@ class DialogSmsService implements SmsServiceInterface
 		$message->message_id = $jsonObj['inboundSMSMessageNotification']['inboundSMSMessage']['messageId'];
 		$message->date_time = $jsonObj['inboundSMSMessageNotification']['inboundSMSMessage']['dateTime'];
 		$message->sender = $jsonObj['inboundSMSMessageNotification']['inboundSMSMessage']['senderAddress'];
-		$message->destination_address = $jsonObj['inboundSMSMessageNotification']['inboundSMSMessage']['destinationAddress'];
+		$message->receiver_address = $jsonObj['inboundSMSMessageNotification']['inboundSMSMessage']['destinationAddress'];
 		
 		if($callback){
 			$callback($message);
