@@ -1,0 +1,7 @@
+{
+    "auth_url": "https://ideabiz.lk/apicall/",
+    "auth_consumerKey": "",
+    "auth_consumerSecret": "",
+    "auth_refreshToken": "",
+    "auth_scope" : "PRODUCTION"
+}
