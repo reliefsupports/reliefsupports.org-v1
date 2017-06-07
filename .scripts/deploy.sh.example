@@ -24,7 +24,10 @@ EOF
 ssh -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
 cd /var/www/public
 rm -rf vendor
+rm -rf node_modules
 composer install
+npm i
+npm run prod
 chmod -R 777 storage/
 chmod 777 bootstrap/cache
 cd storage
