@@ -18,14 +18,12 @@
               <tr> <td>{{ __('home.table.address') }}</td> <td>{{$data['entry']->address}}</td> </tr>
               <tr> <td>{{ __('home.table.city') }}</td> <td>{{$data['entry']->city}}</td> </tr>
               <tr> <td>{{ __('home.table.tels') }}</td> <td>{{$data['entry']->telephone}}</td> </tr>
-              <tr> <td>{{ __('home.table.ppl') }}</td>
-              <td>
+              <tr> <td>{{ __('home.table.ppl') }}</td>              
                 @if($data['entry']->heads && $data['entry']->heads > 0)
                   <td>{{$data['entry']->heads}}</td>
                 @else
                   <td>Not provided</td>
-                @endif
-              </td>
+                @endif              
               </tr>
               <tr> <td>{{ __('home.table.entered_by') }}</td> <td>{{$data['entry']->created_at}}</td> </tr>
               <tr> <td>{{ __('home.table.updated_at') }}</td> <td>{{$data['entry']->updated_at}}</td> </tr>
