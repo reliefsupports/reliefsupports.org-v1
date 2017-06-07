@@ -13,3 +13,4 @@ npm-debug.log
 composer.lock
 .DS_Store
 .scripts/deploy.sh
+package-lock.json
