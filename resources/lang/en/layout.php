@@ -32,7 +32,7 @@ return [
         'ppl' => 'People',
         'entered_by' => 'Entered By',
         'donation' => 'Donation',
-        'extra_info' => 'Additional Information'
+        'extra-info' => 'Additional Information'
     ],
     'search-placeholder' => 'Enter Your Keyword.',
     'all' => '',
