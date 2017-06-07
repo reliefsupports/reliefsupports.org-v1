@@ -122,7 +122,7 @@ class NeedsController extends Controller
         $response['data'] = $needs;
         $response['error'] = false;
 
-        return json_encode($response, JSON_UNESCAPED_UNICODE);
+        return response()->json($response);
     }
 
     public function getById($id = null) {
@@ -146,7 +146,6 @@ class NeedsController extends Controller
         }
         // $request->request->add(['source' => 'api']);
 
-        return json_encode($response, JSON_UNESCAPED_UNICODE);
+        return response()->json($response);
     }
 }
-
