@@ -79,6 +79,7 @@
         var geocoder;
         var x;
         var marker;
+   
             //initialize map using call back
             function myMap() {
               var myCenter = new google.maps.LatLng(6.9271,79.9912);                
@@ -137,7 +138,7 @@
             function showError(error) {
             switch(error) {
                 case "ZERO_RESULTS":
-                    x.innerHTML = "ඔබගේ ලිපිනය සොයාගත නොහැක . රතු පැහැති  සලකුණ ඇදගෙන යාමෙන්  ඔබ සිටින ස්ථානය ලකුණු කල හැක "
+                    x.innerHTML = '{{ __('layout.map.ZERO_RESULTS') }}';
                     break;
                 case "OVER_QUERY_LIMIT":
                     x.innerHTML = "විමසුම් සීමාව ඉක්මවිය ."

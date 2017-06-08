@@ -54,5 +54,12 @@ return [
     'closest_city' => 'Nearest Divisional Secretariats Office',
     'aid_desc' => 'Details of Your Donation',
     'extra_info_if_any' => 'Additional Details (if any)',
-    'save_form' => 'Add'
+    'save_form' => 'Add',
+    'map'=>[
+        'ZERO_RESULTS'=>'Non-existent address.Mark your location manually, moving the red marker',
+        'OVER_QUERY_LIMIT' => 'You are over your quota.',
+        'REQUEST_DENIED' => 'The request was denied.',
+        'INVALID_REQUEST' => 'Invalid request.',
+        'UNKNOWN_ERROR' => 'Server error. Try again.'
+    ]
 ];
