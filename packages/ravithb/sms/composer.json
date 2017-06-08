@@ -10,6 +10,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        ideabiz/sms:"^1.0"
+        "ideabiz/sms": "^1.0"
     }
 }
