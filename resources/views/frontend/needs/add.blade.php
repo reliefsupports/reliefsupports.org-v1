@@ -141,16 +141,16 @@
                     x.innerHTML = '{{ __('layout.map.ZERO_RESULTS') }}';
                     break;
                 case "OVER_QUERY_LIMIT":
-                    x.innerHTML = "විමසුම් සීමාව ඉක්මවිය ."
+                    x.innerHTML = '{{ __('layout.map.OVER_QUERY_LIMIT') }}';
                     break;
                 case "REQUEST_DENIED":
-                    x.innerHTML = "ඉල්ලීම ප්‍රතික්ෂේප විය "
+                    x.innerHTML = '{{ __('layout.map.REQUEST_DENIED') }}';
                     break;
                 case "INVALID_REQUEST":
-                    x.innerHTML = "වලංගු නොවන ඉල්ලීමකි ."
+                    x.innerHTML = '{{ __('layout.map.INVALID_REQUEST') }}';
                     break;
                 case "UNKNOWN_ERROR":
-                    x.innerHTML="නැවත උත්සහ කරන්න";
+                    x.innerHTML='{{ __('layout.map.UNKNOWN_ERROR') }}';
                     break;
             }
         }
