@@ -139,6 +139,10 @@ class DonationController extends Controller
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
+    public function getById($id = null) {
+        return $this->donation->findDonation($id);
+    }
+
     public function post(Request $request) {
         $response = array(
             'error' => true,
@@ -148,7 +152,7 @@ class DonationController extends Controller
         // Add proper auth.
         $src = $request->input('source');
         if ($src === 'fbbot') {
-            if ( $this->need->addNeed($request->all()) ) {
+            if ( $this->donation->addDonation($request->all()) ) {
                 $response['error'] = false;
             }            
         } else {

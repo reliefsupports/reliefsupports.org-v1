@@ -1,0 +1,41 @@
+#!/bin/bash
+PUBLIC_KEY_PATH=
+USERNAME=
+ENV=dev
+if [ $ENV = "dev" ]; then
+  HOST=
+else
+  HOST=
+fi
+
+cd ..
+sftp -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
+pwd
+cd /var/www/public
+put *.*
+put -r app
+put -r config
+put -r database
+put -r public
+put -r resources
+put -r routes
+EOF
+
+ssh -i ${PUBLIC_KEY_PATH} ${USERNAME}@${HOST} <<EOF
+cd /var/www/public
+rm -rf vendor
+rm -rf node_modules
+composer install
+npm i
+npm run prod
+chmod -R 777 storage/
+chmod 777 bootstrap/cache
+cd storage
+mkdir framework
+cd framework
+mkdir cache
+mkdir sessions
+mkdir views
+cd ..
+cd ..
+EOF

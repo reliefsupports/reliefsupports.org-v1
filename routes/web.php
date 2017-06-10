@@ -33,3 +33,10 @@ Route::get('/emergency-contacts', 'HomeController@emergency');
 Route::get('/twitter-feed', 'FeedsController@index');
 
 Route::get('/entry/{type}/{id}', 'EntryController@view');
+
+Route::get('/locale/{locale}', function($locale){
+     App::setLocale($locale);
+     session(['locale' => $locale]);
+     return redirect('/');
+});
+Route::post('/search-donations-needs', 'HomeController@searchDonationsOrNeeds');
