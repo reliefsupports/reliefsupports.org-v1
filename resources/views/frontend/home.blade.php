@@ -6,12 +6,11 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="well hero">
-            <h3>ආයුබෝවන්!!!</h3>
-            <p>අයහපත් කාලගුණ තත්වය හේතුවෙන් ආපදාවට පත්වූ ඔබේ අවශ්‍යතා සහ මේ මොහොතේ ඔවුන්ට උපකාර කිරීමට සූදානම් ඔබත් මුනගැස්සවීම සඳහා මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.
-                මෙම සේවාව 100% නොමිලේ වන අතර හුදෙක් ආධාර කලමනාකරණයට පහසුකවක් සැලසිම අපේ අරමුණයි. නුදුරු දිනයන් තුළ තවත් විශේෂාංග අතුළත් වනු ඇත.</p>
+            <h3>{{ __('layout.greet') }}</h3>
+            {!!__('layout.intro')!!}
             <p>
-                <a class="btn btn-lg btn-primary" href="{{ url("/donations/add")}}" role="button">ආධාර එකතු කරන්න &raquo;</a>
-                <a class="btn btn-lg btn-primary" href="{{ url("/needs/add") }}" role="button">අවශ්‍යතා එකතු කරන්න &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="{{ url("/donations/add")}}" role="button">{{ __('layout.button.add-aid') }}</a>
+                <a class="btn btn-lg btn-primary" href="{{ url("/needs/add") }}" role="button">{{ __('layout.button.add-request') }}</a>
             </p>
         </div>
         <div class="well hero">
@@ -20,25 +19,25 @@
 
              <div class="row">
                 <div class="col-sm-2">{!! Form::select('type', array('all'=>'සියලු', 'donations' => 'ආධාර', 'needs' => 'අවශ්‍යතා'), '1', array("class"=>"btn btn-lg btn-primary selectpicker")) !!}</div>
-                <div class="col-sm-8"><input name="search" type="text"  class="form-control" placeholder="ඔබේ සෙවුම මෙහි ඇතුලත් කරන්න." value="{{ Input::old('search')}}"></div>
-                <div class="col-sm-2"><button  class="btn btn-lg btn-primary" type="submit" type="button">සොයන්න</button></div>
+                <div class="col-sm-8"><input name="search" type="text"  class="form-control" placeholder="{{ __('layout.search-placeholder')}}" value="{{ Input::old('search')}}"></div>
+                <div class="col-sm-2"><button  class="btn btn-lg btn-primary" type="submit" type="button">{{ __('layout.button.search') }}</button></div>
              </div> 
             {!! Form::close() !!}
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h4>නවතම අවශ්‍යතා </h4>
+                <h4>{{ __('layout.latest_needs') }}</h4>
                 <table class="table table-responsive" id="needs-table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>නම</th>
-                        <th>අවශ්‍යතා</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>පිරිස</th>
-                        <th>ඇතුල්කලේ</th>
+                        <th>{{ __('layout.table.name') }}</th>
+                        <th>{{ __('layout.table.needs') }}</th>
+                        <th>{{ __('layout.table.address') }}</th>
+                        <th>{{ __('layout.table.city') }}</th>
+                        <th>{{ __('layout.table.tel') }}</th>
+                        <th>{{ __('layout.table.ppl') }}</th>
+                        <th>{{ __('layout.table.entered_by') }}</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -82,24 +81,24 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="{{ url("/needs/") }}" role="button">සියලුම  අවශ්‍යතා මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="{{ url("/needs/") }}" role="button">{{ __('layout.all_needs') }}</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
 
         <div class="row">
             <div class="col-md-12">
-                <h4>නවතම ආධාර </h4>
+                <h4>{{ __('layout.latest_donations') }}</h4>
                 <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>නම</th>
-                        <th>ආධාරය</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>ඇතුල්කලේ</th>
+                        <th>{{ __('layout.table.name') }}</th>
+                        <th>{{ __('layout.table.donation') }}</th>
+                        <th>{{ __('layout.table.address') }}</th>
+                        <th>{{ __('layout.table.city') }}</th>
+                        <th>{{ __('layout.table.tel') }}</th>
+                        <th>{{ __('layout.table.entered_by') }}</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -135,7 +134,7 @@
                 </table>
 
                 <p>
-                    <a class="btn btn-lg btn-primary" href="{{ url("donations") }}" role="button">සියලුම  ආධාර මෙතනින්  &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="{{ url("donations") }}" role="button">{{ __('layout.all_donations') }}</a>
                 </p>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
@@ -151,19 +150,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>නම</dt>
+                        <dt>{{ __('layout.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>අවශ්‍යතා</dt>
+                        <dt>{{ __('layout.table.needs') }}</dt>
                         <dd id="needs"></dd>
-                        <dt>ලිපිනය</dt>
+                        <dt>{{ __('layout.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>නගරය</dt>
+                        <dt>{{ __('layout.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>දුරකථන අංක</dt>
+                        <dt>{{ __('layout.table.tels') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>පිරිස</dt>
+                        <dt>{{ __('layout.table.ppl') }}</dt>
                         <dd id="heads"></dd>
-                        <dt>ඇතුල්කලේ</dt>
+                        <dt>{{ __('layout.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>
@@ -183,19 +182,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>නම</dt>
+                        <dt>{{ __('layout.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>ආධාරය</dt>
+                        <dt>{{ __('layout.table.donation') }}</dt>
                         <dd id="donation"></dd>
-                        <dt>ලිපිනය</dt>
+                        <dt>{{ __('layout.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>නගරය</dt>
+                        <dt>{{ __('layout.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>දුරකථන අංක</dt>
+                        <dt>{{ __('layout.table.tels') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>අමතර විස්තර </dt>
+                        <dt>{{ __('layout.table.extra_info') }}</dt>
                         <dd id="information"></dd>
-                        <dt>ඇතුල්කලේ</dt>
+                        <dt>{{ __('layout.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>
