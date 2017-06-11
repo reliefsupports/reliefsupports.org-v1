@@ -4139,7 +4139,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   line-height: 1.042;
   height: 53px;
   font-weight: 700;
-  padding: 14px 21px;
+  padding: 5px;
 }
 .navbar-brand > [class*="fui-"] {
   font-size: 19px;
@@ -4149,7 +4149,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
-    margin-left: -21px;
+    //margin-left: -21px;
   }
 }
 .navbar-toggle {
@@ -4847,8 +4847,6 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 .navbar-lg .navbar-brand {
   line-height: 1;
   height: 76px;
-  padding-top: 26px;
-  padding-bottom: 26px;
 }
 .navbar-lg .navbar-brand > [class*="fui-"] {
   font-size: 24px;

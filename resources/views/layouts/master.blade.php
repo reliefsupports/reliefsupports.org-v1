@@ -14,6 +14,7 @@
 
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -30,7 +31,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
             </button>
-            <a class="navbar-brand" href="/">Relief Supports</a>
+            <a class="navbar-brand" href="/" title="Relief Supports"><img src="/images/rslogo.png" /></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
