@@ -6,7 +6,9 @@ return [
         'requests' => 'Requests',
         'tel'  => 'Essential Phone Numbers',
         'online-donations' => 'Online Donations',
-        'twitter-feed' => '#FloodSL Twitter Feed'
+        'twitter-feed' => '#FloodSL Twitter Feed',
+    	'projects' => 'Volunteer Projects',
+    	'admin' => 'Admin'
     ],
     'greet' => 'Welcome!!!',
     'intro' => '<p>This web platform has been developed to list the requirments of people who were affected by the flooding in Sri Lanka, and to connect them to people willing to offer help. This service is 100% free-of-charge, and our aim is to ease the process of managing relief efforts. We will be adding more features in the coming days.</p>',

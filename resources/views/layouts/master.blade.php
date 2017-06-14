@@ -20,6 +20,13 @@
       <script src="{{ asset('js/vendor/html5shiv.js') }}"></script>
       <script src="{{ asset('js/vendor/respond.min.js') }}"></script>
     <![endif]-->
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+	<script src="{{ asset("/js/vendor/jquery.min.js") }}"></script>
+	<script src="{{ asset("/js/vendor/jquery-ui.min.js") }}"></script>
+	<link href="{{ asset("/css/vendor/jquery-ui/jquery-ui.min.css") }}" rel="stylesheet">
+	<link href="{{ asset("/css/vendor/jquery-ui/jquery-ui.theme.min.css") }}" rel="stylesheet">
+	<link href="{{ asset("/css/vendor/jquery-ui/jquery-ui.structure.min.css") }}" rel="stylesheet"> 
+	
 </head>
 <body>
 
@@ -34,7 +41,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">{{ __('layout.menu.home') }}</a></li>
+<!--                 <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">{{ __('layout.menu.home') }}</a></li> -->
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">{{ __('layout.menu.aid') }}</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">{{ __('layout.menu.requests') }}</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">{{ __('layout.menu.tel') }}</a></li>
@@ -51,6 +58,15 @@
                         @else
                         <li><a href="/locale/si">සිංහල</a></li>
                         @endif
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ __('layout.menu.more') }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/projects">{{__('layout.menu.projects')}}</a></li>
+                        <li><a href="/admin">{{__('layout.menu.admin')}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,11 +95,18 @@
     </div>
 </footer>
 
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ asset("/js/vendor/video.js")}}"></script>
+<script src="{{ asset("/js/flat-ui.min.js")}}"></script>
+<script src="{{ asset("/js/donations.js")}}"></script>
+
 <script>
 window.Laravel = {!! json_encode([
     'csrfToken' => csrf_token(),
 ]) !!};
 </script>
 <script src="{{ mix('js/app.js') }}"></script>
+
 </body>
 </html>
