@@ -1,0 +1,15 @@
+{
+    "name": "ravithb/sms",
+    "description": "SMS Send / Receive support for relief supports web app.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ravith",
+            "email": "ravithb@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ideabiz/sms": "^1.0"
+    }
+}
