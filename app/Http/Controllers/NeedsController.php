@@ -68,6 +68,7 @@ class NeedsController extends Controller
             'geolocation'=> 'max:60'
         ], $messages);
 
+
         if ($validator->fails()) {
             return redirect('/needs/add')
                 ->with('isSuccess', false)
