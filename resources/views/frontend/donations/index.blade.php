@@ -10,18 +10,18 @@
                     </div>
                 @endif
                 <p style="float: right;">
-                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">මෙතනින් ආධාර එකතු කරන්න</button></a>
+                    <a href="/donations/add"><button type="button" class="btn btn-primary btn-hg btn-mobile-block">{{ __('layout.button.add-aid') }}</button></a>
                 </p>
                 <table class="table table-responsive" id="donations-table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>නම</th>
-                        <th>ආධාරය</th>
-                        <th>ලිපිනය</th>
-                        <th>නගරය</th>
-                        <th>දුරකථන</th>
-                        <th>ඇතුල්කලේ</th>
+                        <th>{{ __('layout.table.name') }}</th>
+                        <th>{{ __('layout.table.donation') }}</th>
+                        <th>{{ __('layout.table.address') }}</th>
+                        <th>{{ __('layout.table.city') }}</th>
+                        <th>{{ __('layout.table.tel') }}</th>
+                        <th>{{ __('layout.table.entered_by') }}</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -78,19 +78,19 @@
                 </div>
                 <div class="modal-body">
                     <dl class="dl-horizontal">
-                        <dt>නම</dt>
+                        <dt>{{ __('layout.table.name') }}</dt>
                         <dd id="name"></dd>
-                        <dt>ආධාරය</dt>
+                        <dt>{{ __('layout.table.donation') }}</dt>
                         <dd id="donation"></dd>
-                        <dt>ලිපිනය</dt>
+                        <dt>{{ __('layout.table.address') }}</dt>
                         <dd id="address"></dd>
-                        <dt>නගරය</dt>
+                        <dt>{{ __('layout.table.city') }}</dt>
                         <dd id="city"></dd>
-                        <dt>දුරකථන අංක</dt>
+                        <dt>{{ __('layout.table.tel') }}</dt>
                         <dd id="telephone"></dd>
-                        <dt>අමතර විස්තර </dt>
+                        <dt>{{ __('layout.table.extra_info') }}</dt>
                         <dd id="information"></dd>
-                        <dt>ඇතුල්කලේ</dt>
+                        <dt>{{ __('layout.table.entered_by') }}</dt>
                         <dd id="added"></dd>
                     </dl>
                 </div>

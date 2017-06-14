@@ -32,7 +32,7 @@ return [
         'ppl' => 'People',
         'entered_by' => 'Entered By',
         'donation' => 'Donation',
-        'extra_info' => 'Additional Information'
+        'extra-info' => 'Additional Information'
     ],
     'search-placeholder' => 'Enter Your Keyword.',
     'all' => '',
@@ -41,6 +41,7 @@ return [
     'collect_donations' => 'Add Donations',
     'collect_needs' => 'Add Requests',
     'latest_needs' => 'Latest Requests',
+    'latest_donations' => 'Latest Donations',
     'your_name' => 'Your Name',
     'home' => 'Home',
     'donate' => 'Donations',
