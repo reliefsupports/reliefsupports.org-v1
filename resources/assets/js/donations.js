@@ -54,6 +54,37 @@ $('.read-needs').on('click', function () {
 
 });
 
+$('.read-transports').on('click', function () {
+    var id = $(this).data('id');
+    $.ajax({
+        type: "GET",
+        url: '/transports/show/' + id,
+        data: {}
+    })
+        .done(function(data) {
+            var modal = $('#transportModal');
+
+            if (data.isSuccess) {
+
+                modal.find('#title').html('Transport #' + data.transport.id);
+                modal.find('#name').html(data.transport.name);
+                modal.find('#telephone').html(data.transport.telephone);
+                modal.find('#address').html(data.transport.address);
+                modal.find('#city').html(data.transport.city);
+                modal.find('#availability').html(data.transport.availability);
+                modal.find('#time_possibility').html(data.transport.time_possibility);
+                modal.find('#type').html(data.transport.type);
+                modal.find('#is_fuel').html(data.transport.is_fuel);
+                modal.find('#added').html(data.transport.created_at);
+            } else {
+                modal.find('#title').html('Transport #' + data.transport.id);
+                modal.find('.modal-body').html('<p>Something went wrong. Please try again.</p>');
+            }
+            modal.modal('show');
+        });
+
+});
+
 $('form').submit(function(e) {
     $('form').find('button[type=submit]').attr("disabled", true);
 });

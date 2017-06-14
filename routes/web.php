@@ -24,6 +24,11 @@ Route::get('/needs/add', 'NeedsController@add');
 Route::post('/needs/add', 'NeedsController@save');
 Route::get('/needs/show/{id}', 'NeedsController@show');
 
+Route::get('/transports', 'TransportController@index');
+Route::get('/transports/add', 'TransportController@add');
+Route::post('/transports/add', 'TransportController@save');
+Route::get('/transports/show/{id}', 'TransportController@show');
+
 Route::get('/emergency-contacts', 'HomeController@emergency');
 Route::get('/twitter-feed', 'FeedsController@index');
 
