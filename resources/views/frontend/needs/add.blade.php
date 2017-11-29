@@ -52,11 +52,11 @@
                             <input type="number" class="form-control" id="heads" name="heads" max="100000" value="{{ old('heads') }}">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="col-lg-10 col-md-offset-2">
                             {!! app('captcha')->render(); !!}
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
                             <button type="submit" class="btn btn-primary">Submit</button>
