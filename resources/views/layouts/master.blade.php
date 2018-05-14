@@ -18,6 +18,7 @@
     <script src="/js/vendor/html5shiv.js"></script>
     <script src="/js/vendor/respond.min.js"></script>
     <![endif]-->
+    @yield('head-content')
 </head>
 <body>
 
@@ -46,6 +47,7 @@
                 <li {{ (Request::is('/') ? 'class=active' : '') }}><a href="/">මුල් පිටුව </a></li>
                 <li {{ (Request::is('donations*') ? 'class=active' : '') }}><a href="/donations">ආධාර</a></li>
                 <li {{ (Request::is('needs*') ? 'class=active' : '') }}><a href="/needs">අවශ්‍යතාවයන්</a></li>
+                <li {{ (Request::is('camps*') ? 'class=active' : '') }}><a href="/camps">කදවුරු</a></li>
                 <li {{ (Request::is('emergency-contacts*') ? 'class=active' : '') }}><a href="/emergency-contacts">අත්‍යවශ්‍ය දුරකථන  අංක </a></li>
                 <!-- <li {{ (Request::is('online-donations*') ? 'class=active' : '') }}><a href="/online-donations">Online Donations </a></li> -->
                 <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#WeatherSL Twitter Feed</a></li>
@@ -80,10 +82,10 @@
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
 <script src="{{ asset("/js/vendor/jquery.min.js") }}"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset("/js/vendor/video.js")}}"></script>
 <script src="{{ asset("/js/flat-ui.min.js")}}"></script>
 <script src="{{ asset("/js/donations.js")}}"></script>
 
+@yield('js-content')
 </body>
 </html>

@@ -29,3 +29,8 @@ Route::get('/twitter-feed', 'FeedsController@index');
 
 Route::get('/entry/{type}/{id}', 'EntryController@view');
 Route::post('/search-donations-needs', 'HomeController@searchDonationsOrNeeds');
+
+Route::get('/camps', 'CampController@index');
+Route::get('/camps/add', 'CampController@add');
+Route::post('/camps/add', 'CampController@save');
+Route::get('/camps/show/{id}', 'CampController@show');
