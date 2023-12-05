@@ -46,7 +46,7 @@
                             </button>
                         </td>
                         <td>
-                            <a target="_blank" href="http://reliefsupports.org/entry/donation/{{$donation->id}}">
+                            <a target="_blank" href="/entry/donation/{{$donation->id}}">
                                 <button type="button" class="btn btn-primary">
                                     <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                                 </button>

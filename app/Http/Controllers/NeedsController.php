@@ -61,10 +61,10 @@ class NeedsController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:100',
             'telephone' => 'required|max:100',
-            'address' => 'required|max:100',
-            'city' => 'required|max:50',
-            'needs' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+            'address' => 'required|max:1000',
+            'city' => 'required|max:500',
+            'needs' => 'required'
+            //'g-recaptcha-response' => 'required|captcha'
         ], $messages);
 
         if ($validator->fails()) {

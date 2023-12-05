@@ -14,7 +14,7 @@
             @endif
             <div class="col-md-12">
                 <h4>අවශ්‍යතා එකතු කරන්න </h4>
-                <form class="form-horizontal" role="form" method="POST" action="/needs/add">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url("/needs/add")}}">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="col-lg-2 control-label">ඔබගේ නම</label>
@@ -52,11 +52,11 @@
                             <input type="number" class="form-control" id="heads" name="heads" max="100000" value="{{ old('heads') }}">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="col-lg-10 col-md-offset-2">
                             {!! app('captcha')->render(); !!}
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
                             <button type="submit" class="btn btn-primary">Submit</button>
